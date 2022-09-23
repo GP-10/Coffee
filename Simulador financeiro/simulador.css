@@ -6,7 +6,7 @@
 
 .header {
     padding: 15px;
-    border-bottom: 3px solid #fdfdfd;
+    border-bottom: 3px solid #932020;
     background-color: black;
 }
 
@@ -26,14 +26,20 @@ h1 {
 
 }
 
-.banner {
+/*.banner {
     background-image: url(./bandeja-simulador.jpg);
     padding: 100px 0;
     height: 20px 10px;
+}*/
+.banner{
+    display: flex;
 }
-
-.banner .container {
-    height: 350px;
-    align-items: center;
-    justify-content: center;
+.banner img{
+    display: flex;
+    position: relative;
+    height: 770px;
+    width: 100%;
+}
+.banner .container{
+    position: absolute;
 }
