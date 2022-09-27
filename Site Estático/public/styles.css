@@ -1,0 +1,159 @@
+body{
+    background-color: #ffffff;
+    font-family:sans-serif;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.home{
+    background-color: #B88B5C;
+}
+
+header{
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+#title{
+    padding: 15px;
+    color: white;
+    font-weight: 400;
+    width: 141px;
+    height: 61px;
+    top: 62px;
+    left: 71px;
+    flex-direction: column;
+    line-height: 10px;
+}
+
+li{
+    display: inline-block;
+    margin: 20px;
+}
+
+a{
+    color:white;
+}
+
+a:hover{
+    color: rgb(37, 37, 37);
+    transition: 0.3s all;
+}
+
+#login-btn{
+    border: 2px solid rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+#login-btn:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+h1{
+    font-weight: 200;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+aside{
+    padding: 100px;
+    margin-bottom: 10px;
+    max-width: 500px;
+}
+
+h2{
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 61px;
+
+    /* font-size: 56px;
+    line-height: 45px;
+    font-family: sans-serif;
+    color: white; */
+}
+
+span{
+    color: rgb(255, 255, 255);
+}
+
+p{
+    line-height: 20px;
+    max-width: 500px;
+    font-family: sans-serif;
+    color: white;
+    font-size: 18px;
+}
+
+.simulador{
+    height: 50px;
+    width: 50%;
+    background-color: #B88B5C;
+    color: white;
+    font-size: 18px;
+    border-radius: 25px;
+}
+
+.simulador:hover{
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.img-home{
+    margin-left: 50%;
+    width: 550px;
+    transition: all 0.8s;
+
+}
+
+.img-home:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.quem-somos{
+    margin: 100px;
+}
+
+.bckgrnd{
+margin-top: -27%;
+margin-left: 13%;
+width: 300px;
+height: 300px;
+background: #8E582C;
+} 
+
+.img-quem-somos{
+    width: 550px;
+    margin-top: -37%;
+    margin-left: 0%;
+
+}
+
+
+.quem-somos-txt{
+    margin-left: 35%;
+    text-align: center;
+    background-color: #E8CB9A;
+}
+
+.quem-somos-txt p{
+    text-align: left;
+    color: black;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 38px;
+}
+.quem-somos-txt h2{
+    color: black;
+}
