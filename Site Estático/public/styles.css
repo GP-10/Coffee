@@ -6,26 +6,24 @@ body{
 }
 
 .home{
-    background-color: #B88B5C;
+    background: #B88B5C;
 }
 
 header{
-    padding: 15px;
+    padding: 2.5%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    font-size: 18px;
+    font-size: 100%;
+    margin-bottom: -5%;
 }
 
+
+
 #title{
-    padding: 15px;
+    padding: 2%;
     color: white;
-    font-weight: 400;
-    width: 141px;
-    height: 61px;
-    top: 62px;
-    left: 71px;
     flex-direction: column;
     line-height: 10px;
 }
@@ -62,24 +60,19 @@ h1{
 main{
     display: flex;
     flex-direction: row;
-    margin-top: 50px;
+    margin-top: 1%;
 }
 
 aside{
-    padding: 100px;
-    margin-bottom: 10px;
+    padding: 6.5%;
     max-width: 500px;
 }
 
 h2{
     font-weight: 400;
     font-size: 50px;
-    line-height: 61px;
-
-    /* font-size: 56px;
-    line-height: 45px;
+    line-height: 120%;
     font-family: sans-serif;
-    color: white; */
 }
 
 span{
@@ -87,20 +80,19 @@ span{
 }
 
 p{
-    line-height: 20px;
-    max-width: 500px;
     font-family: sans-serif;
     color: white;
     font-size: 18px;
 }
 
 .simulador{
-    height: 50px;
+    height: 14%;
     width: 50%;
     background-color: #B88B5C;
     color: white;
     font-size: 18px;
     border-radius: 25px;
+    transition: 0.3s all;
 }
 
 .simulador:hover{
@@ -111,7 +103,7 @@ p{
 
 .img-home{
     margin-left: 50%;
-    width: 550px;
+    width: 110.8%;
     transition: all 0.8s;
 
 }
@@ -122,22 +114,20 @@ p{
 }
 
 .quem-somos{
-    margin: 100px;
+    margin: 5%;
 }
 
-.bckgrnd{
-margin-top: -27%;
+.quem-somos-bckgrnd{
+margin-top: -30%;
 margin-left: 13%;
-width: 300px;
+width: 19.50%;
 height: 300px;
 background: #8E582C;
 } 
 
 .img-quem-somos{
-    width: 550px;
+    width: 40%;
     margin-top: -37%;
-    margin-left: 0%;
-
 }
 
 
@@ -151,9 +141,114 @@ background: #8E582C;
     text-align: left;
     color: black;
     font-weight: 400;
-    font-size: 35px;
-    line-height: 38px;
+    font-size: 200%;
+    line-height: 130%;
 }
 .quem-somos-txt h2{
     color: black;
+}
+
+.nossos-valores-titulo{
+    display: flex;
+    justify-content: center;
+    margin: 10%;
+    color: #623307;
+    text-align: center;
+}
+
+.nossos-valores-bckgrnd{
+    margin-top: -13%;
+    margin-left: 2%;
+}
+
+.nossos-valores-bckgrnd1{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 200px;
+    width: 11%;
+    
+}
+
+
+.nossos-valores-bckgrnd2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 0px;
+    width: 11%;
+    margin-top: -10%;
+
+}
+
+.nossos-valores-bckgrnd3{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 400px;
+    width: 11%;
+    margin-top: -25%;
+}
+
+.nossos-valores-bckgrnd4{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 200px;
+    width: 11%;
+    margin-top: -15%;
+    
+} 
+
+.nossos-valores-txt{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    color: black;
+    text-align: center;
+}
+
+
+.nossos-valores-txt p{
+    text-align: center;
+    color: black;
+}
+
+.nossos-valores-img{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: -30%;
+    margin-top: -45%;
+}
+
+.img-nossos-valores{
+    width: 40% ;
+}
+
+
+footer{
+    background-color: black;
+    color: white;
+    height: 490px;
+    display: flex;
+    margin: 0;
+}
+footer .contato{
+    margin: 20px;
+    height: 60px;
+    width: 30%;
+    justify-content: center;
+    text-align: center;
+}
+footer .contato h1{
+    font-size: 50px;
+}
+footer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+footer p{
+    margin-left: 15%;
+    padding: 20px 0;
 }
