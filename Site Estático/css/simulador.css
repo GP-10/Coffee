@@ -1,0 +1,21 @@
+.formulario {
+    background-color: black;
+    opacity: 55%;
+    color: white;
+    height: 350px;
+    width: 600px;
+    
+}
+.formulario h1{
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.form{
+    margin: 10%;
+}
+
+.campo {
+    font-size: 20px;
+    justify-content: flex-start;
+}
