@@ -3,6 +3,7 @@
 /* links */
 a{
     text-decoration: none;
+    color: black;
 }
 /* navbar */
 
@@ -61,13 +62,20 @@ main{
     padding: 45px;
 }
 
+.formulario {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    height: 400px;
+    width: 600px;
+}
+
 
 /*footer*/
 
 .footer{
     background-color: black;
     color: white;
-    height: 490px;
+    height: 400px;
     display: flex;
     margin: 0;
 }
@@ -89,4 +97,12 @@ main{
 .footer .container p{
     margin-left: 15%;
     padding: 20px 0;
+}
+
+/* imagem */
+
+.image{
+    position: absolute;
+    margin-top: -30%;
+    margin-left: 52%;
 }

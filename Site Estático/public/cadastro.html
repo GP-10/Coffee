@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/cadastro.css">
     <title>Document</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
                 </div>
                 <div class="nav">
                     <ul>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="#">Quem somos</a></li>
                         <li><a href="#">Nossos Valores</a></li>
                         <li><a href="#">Projeto</a></li>
@@ -25,47 +26,55 @@
                         <li><a href="#">Contato</a></li>
                     </ul>
                     <button>Login</button>
-                </div>
-                
+                </div>   
             </div>
         </div>  
     </header>
 
     <main>
-        <div class="cont">
+        <div class="container">
+            <div class="formulario">
+                <h1>Cadastro</h1>
+                    <div class="form">
+                        <div class="campo">
+                            <h4>Nome</h4>
+                            <input type="text" id="nome" placeholder="Nome">
+                        </div>
+            
+                        <div class="campo">
+                            <h4>Sobrenome</h4>
+                            <input type="text" id="sobrenome" placeholder="Sobrenome">
+                        </div>
+            
+                        <div class="campo">
+                            <h4>E-mail</h4>
+                            <input type="text" id="email" placeholder="Email@email.com">
+                        </div>
+            
+                        <div class="campo">
+                            <h4>Senha</h4>
+                            <input type="text" id="password" placeholder="password">
+                        </div>
+            
+                        <div class="campo">
+                            <h4>Confirmação de senha</h4>
+                            <input type="text" id="password" placeholder="password">
+                        </div>
+                        <button>Cadastrar</button>
+            
+                    </div>
+            
+                    <div class="info">
+                        <h4>Já possui cadastro?
+                        <a href="login.html">Login</a>
+                    </h4>
+                    </div>
 
-            <div class="campo">
-                <label for="">Nome</label>
-                <input type="text" id="nome" placeholder="Nome">
+                    <div class="image">
+                        <img src="../src/img/cadastro.png" alt="">
+                    </div>
+                </div>
             </div>
-
-            <div class="campo">
-                <label for="">Sobrenome</label>
-                <input type="text" id="sobrenome" placeholder="Sobrenome">
-            </div>
-
-            <div class="campo">
-                <label for="">E-mail</label>
-                <input type="text" id="email" placeholder="Email@email.com">
-            </div>
-
-            <div class="campo">
-                <label for="">Senha</label>
-                <input type="text" id="password" placeholder="password">
-            </div>
-
-            <div class="campo">
-                <label for="">Confirmação de senha</label>
-                <input type="text" id="password" placeholder="password">
-            </div>
-            <button>Cadastrar</button>
-
-        </div>
-
-        <div class="info">
-            <h3>Já possui cadastro?</h3>
-            <button><a href="login.html">Login</a></button>
-        </div>
         
     </main>
 
