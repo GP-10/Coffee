@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="simulador.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>SIMULADOR FINANCEIRO</h1>
+        </div>
+    </div>
+    <!-- aaa -->
+    <div class="banner">
+        <img src="https://img.freepik.com/fotos-gratis/fundo-com-graos-de-cafe_1205-268.jpg?1?w=360" alt="">
+            <div class="container">
+                <div class="banner">
+                     <div class="container">
+                        <div class="caixa-formulario">
+                        <h2>Nos ajude a te ajudar</h2>
+                            <div class="campo">
+                                 <label>Qual o tamanho da sua estufa ?</label>
+                                    <input type="number" id="in_tamanho" placeholder="Ex: l00">
+                                        </div>
+                                    <div class="campo">
+                                </div>
+                            <button onclick="ok()">Simular</button>
+                        </div>
+                    </div>
+                    <div class="resultado">    
+                        <div id="div_resultado"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+</body>
+</html>
+<script>
+    function ok() {
+        var metros = in_tamanho.value // quantos metros quadrados
+        var kg = metros * 0.89 // quantos kilos faz um metro²
+        var perda = kg * 0.20 // 20% de perda por conta da doença
+        var bruto = metros * 8.215 // quanto cada metro² faz em dinheiro
+        var dinheiro = bruto * 0.20 // perda em dinheiro referente aos 20% da doença 
+        var sensor = 0.75 * metros // quanto sera gasto com sensor por metros
+        var eco = (dinheiro - sensor) * metros // quanto sera economizado
+        var total = metros * (dinheiro - sensor) // total economizados pelo total de metros
+
+
+        div_resultado.innerHTML= `De acordo com os dados inseridos, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)}. <br> Porém você perde entorno de 20% por conta de doenças como (a doença que escolhemos), isso equivale a ${perda.toFixed(2)}Kg, e em dinheiro isso se resulta a R$${dinheiro.toFixed(2)}. <br> Utilizando nosso sensor(nome do produto), você teria um pequeno custo de R$${sensor}, porém o prejuizo que você tem hoje seria totalmente reduzido, resultando em um luco total de R$${total.toFixed(2)}. Isso de acordo com o tamanho de sua estufa.`
+        // div_resultado.innerHTML = `De acordo com os dados inseridos, você produz cerca de ${kg} kilos de café, entretanto cerca de 20% da produção é perdida devido a doenças, equivalente a ${perda} kilos e R${dinheiro}. Ao adquirir nossos serviços você economizara R$${eco}, totalizando R$495 de aumento, incluindo todo o gasto com os sensores`
+    }
+</script>
