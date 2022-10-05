@@ -1,0 +1,34 @@
+.navbar{
+    background-color: black;
+    position: relative;
+}
+
+main{
+    padding: 0;
+    margin: 0;
+}
+.imagens{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.img1{
+    transform: rotateY(180deg);
+}
+
+.logoProduct{
+    margin-left: 30%;
+    position: absolute;
+}
+.logoProduct img{
+    height: 80vh;
+}
+
+.img2{
+    transform: rotateY(180deg);
+}
+
+footer{
+    margin-top: -5px;
+}

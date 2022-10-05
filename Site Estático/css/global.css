@@ -3,7 +3,7 @@
 /* links */
 a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 /* navbar */
 
@@ -15,24 +15,31 @@ a{
 .navbar{
     display: flex;
     flex-direction: row;
-    background-color: #B88B5C;
     justify-content: center;
-}
-
-.container{
-    display: flex;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    width: 100%;
     justify-content: space-around;
-    width: 90%;
-    align-items: center;
+    transition: 0.5s
 }
+/*transição menu
+.navbar.sticky{
+    color: #fff;
+    background:#000;
+    height:60px;
+    transition: 0.5s;
+  }*/
+
 .nav{
     display: flex;
-    padding: 10px;
+    padding: 20px 10px;
+    margin-left: 15%;
 }
 .nav ul{
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 .nav ul li{
     justify-content: space-around;
@@ -45,28 +52,41 @@ a{
 }
 .nav ul li a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 .nav button{
+    margin-top: 10px;
     height: 65%;
-    width: 15%;
-    padding: 13px 30px;
+    width: 30%;
+    padding: 14px 30px;
     border-radius: 2px;
-    border-color: black;
-    background-color: #B88B5C;
+    border-color: #CF7726;
+    color:#CF7726;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+}
+.nav button a{
+    color: #CF7726;
 }
 
 /*main*/
 main{
-    background-color: #B88B5C;
     padding: 45px;
 }
 
 .formulario {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     color: white;
     height: 400px;
     width: 600px;
+}
+
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    align-items: center;
 }
 
 
@@ -86,17 +106,25 @@ main{
     justify-content: center;
     text-align: center;
 }
-.footer .contato h1{
-    font-size: 50px;
+.footer .logo img{
+    height: 20vh;
+    margin: 15% 0 0 25%;
 }
-.footer .container{
+.info{
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    justify-content: space-around;
+    width: 90%;
 }
-.footer .container p{
+.info h3{
+    font-size: 30px;
+    color: #CF7726;
+    margin-bottom: 6%;
+}
+.info p{
+    padding: 3px;
     margin-left: 15%;
-    padding: 20px 0;
+    width: 100%;
+    margin-top: 3%;
 }
 
 /* imagem */
@@ -105,4 +133,12 @@ main{
     position: absolute;
     margin-top: -30%;
     margin-left: 52%;
+}
+.info{
+    flex-direction: row;
+}
+
+.p p{
+    margin-top: 150%;
+    margin-left: -250%;
 }

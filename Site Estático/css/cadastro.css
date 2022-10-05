@@ -1,5 +1,11 @@
+.navbar{
+    background-color: black;
+    position: relative;
+}
 .formulario{
-    height: 520px
+    height: 520px;
+    width: 70%;
+    padding-bottom: 25px;
 }
 .formulario h1{
     margin-top: 5%;
@@ -51,7 +57,7 @@
     padding: 5px;
 }
 
-.info{
+.informacoes{
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
@@ -60,14 +66,14 @@
     font-size: 18px;
     margin-top: -9%;
 }
-.info h4{
+.informacoes h4{
     margin-top: 5px;
 }
-.info a{
+.informacoes a{
     color: white;
 }
 
-.image{
-    margin-left: 30%;
-    margin-top: -32%;
+.imageCAD{
+    margin-left: 70%;
+    margin-top: -62%;
 }
