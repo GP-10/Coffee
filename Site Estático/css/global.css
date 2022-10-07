@@ -136,3 +136,13 @@ main{
     margin-top: 150%;
     margin-left: -250%;
 }
+
+/*icon footer*/
+.footer .informa img{
+    height: 23%;
+    width: 10%;
+    padding: 0px 0px 0px 15px;
+}
+.footer .informa{
+    margin-left: 10px;
+}
