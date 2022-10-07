@@ -1,6 +1,8 @@
 /*CSS GLOBAL header e footer*/
 @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
-
+body{
+    background-color: rgba(0, 0, 0, 0.356);
+}
 /* links */
 a{
     text-decoration: none;
