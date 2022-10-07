@@ -15,10 +15,11 @@ main{
 .somos{
     height: 60vh;
     width: 30%;
-    margin-top: 5%;
+    margin-top: 80px;
     margin-left: -20%;
 }
 .somos h3{
+    margin-top: 5%;
     font-size: 50px;
     border-bottom: 3px solid #CF7726;
     padding: 10px;
