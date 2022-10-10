@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Implementando o chartJS</title>
-    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../js/funcoes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -25,7 +26,7 @@
       </div>
 
       <div class="btn-nav-white">
-        <a href="">
+        <a href="./graph.html">
             <h3>Gráficos</h3>
         </a>
     </div>
@@ -43,6 +44,7 @@
     </div>
   </div>
 
+<div class="janela">
   <div class="cards">
 
     <div class="card1">
@@ -65,105 +67,38 @@
       <p>Horario 4</p>
     </div>
 </div>
-  
-  <div class="graficos">
-    <div class="container">
-       <div class="graf">
-        <canvas id="Barra"></canvas>
-       </div>
 
-       <div class="graf">
-        <canvas id="Linha"></canvas>
-       </div>
+<div class="cards-setor">
+  <div class="container">
+    <div class="card">
+      <h1>Setor 1</h1>
+      <div class="temperatura">
+        <p id="temp_setor1">20 -°C</p>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h1>Setor 2</h1>
+      <div class="temperatura">
+        <p id="temp_setor2">20 -°C</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h1>Setor 3</h1>
+      <div class="temperatura">
+        <p id="temp_setor3">18 -°C</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h1>Setor 4</h1>
+      <div class="temperatura">
+        <p id="temp_setor4">22 -°C</p>
+      </div>
     </div>
   </div>
-
-</body>
-
-<script>
-    const labels = [
-      'Janeiro',
-      'Fevereiro',
-      'Março',
-      'Abril',
-      'Mario',
-      'Junho',
-    ];
-
-    const data = {
-    labels: labels,
-    datasets: [{
-      label: 'Perda COM o sensor',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: [22, 24, 27, 23, 20, 18],
-    },
-    {
-        label: 'Perda SEM o sensor',
-        backgroundColor: 'rgb(0, 146, 255)',
-        borderColor: 'rgb(0, 146, 255)',
-        data: [90, 89, 93, 87, 88, 82],
-    }
-]
-  };
-
-  const config = {
-    type: 'bar',
-    data: data,
-    options: {}
+  </div>
+</div>
     
-  };
-</script>
-
-<script>
-  const labels1 = [
-    'Janeiro',
-    'Fevereiro',
-    'Março',
-    'Abril',
-    'Mario',
-    'Junho',
-  ];
-
-  const data1 = {
-  labels: labels1,
-  datasets: [{
-    label: 'Temperatura média',
-    backgroundColor: 'rgb(255, 99, 132)',
-    borderColor: 'rgb(255, 99, 132)',
-    data: [22, 24, 27, 23, 20, 18],
-  },
-  {
-      label: 'Umidade Média',
-      backgroundColor: 'rgb(0, 146, 255)',
-      borderColor: 'rgb(0, 146, 255)',
-      data: [90, 89, 93, 87, 88, 82],
-  }
-]
-};
-
-const config1 = {
-  type: 'line',
-  data: data1,
-  options: {}
-  
-};
-</script>
- 
- <script>
-     const Linha = new Chart(
-       document.getElementById('Linha'),
-       config1
-     );
- </script>
-
-<script>
-  const Barra = new Chart(
-    document.getElementById('Barra'),
-    config
-  );
-</script>
-
- 
-   
  </html>
