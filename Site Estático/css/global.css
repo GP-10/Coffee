@@ -1,7 +1,12 @@
 /*CSS GLOBAL header e footer*/
 @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+*{
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: rgba(0, 0, 0, 0.356);
+    font-family: Play;
 }
 /* links */
 a{
@@ -22,6 +27,7 @@ a{
     width: 100%;
     position: fixed;
     justify-content: space-around;
+    transition: .2s linear;
 }
 .navbar.active{
     background-color: black;
@@ -148,3 +154,22 @@ main{
 .footer .informa{
     margin-left: 10px;
 }
+
+/*Butaozinho delicia caramelo*/
+.bnt{
+    transition: .2s linear;
+}
+
+.bnt a{
+    transition: .2s linear;
+}
+
+.bnt:hover{
+    cursor: pointer;
+    background-color: #CF7726;
+    border: 0;
+    
+}
+ .bnt:hover a{
+    color: white;
+ }
