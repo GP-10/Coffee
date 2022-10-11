@@ -37,14 +37,21 @@
 }
 
 main{
-    padding: 40px 0;
+    padding: 0;
+    text-align: center;
+    border-top: 4px solid #CF7726;
 }
 .sobrenos{
     display: flex;
     justify-content: space-between;
     margin: 0;
-    margin-top: 7%;
+    background-color: rgba(83, 81, 81, 0.192);
+    height: 100%;
+    padding-top: 80px;
+    padding-bottom: 90px;
+    border-bottom: 4px solid #CF7726;
 }
+
 
 /*quem somos*/
 .quemSomos{
