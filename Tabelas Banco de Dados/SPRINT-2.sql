@@ -1,7 +1,7 @@
 
-create database EMPRESA;
+create database HEALT_TECH;
 
-use EMPRESA;
+use HEALT_TECH;
 
 -- CRIANDO A TABELA DE CADASTRO
 create table CLIENTE(
@@ -12,11 +12,6 @@ senha varchar(45),
 constraint chkemail check (email like '%@%')
 )auto_increment=100;
 
-select * from CLIENTE;
-select * from PLANTAÇAO;
-select * from SENSOR;
-select * from dados;
-;
 
 -- INSERINDO DADOS
 insert into CLIENTE (nome, email, senha) values
@@ -28,42 +23,42 @@ insert into CLIENTE (nome, email, senha) values
 -- CRIANDO TABELA PLANTAÇÃO
 create table PLANTACAO(
 idPlantacao int auto_increment,
-especie varchar(45),
-estado char(2),
+Tipo varchar(45),
+UF char(2),
 cidade varchar(45),
-medida varchar(45),
-tamanho int,
+Tamanho_m² decimal(4,1),
 fkCliente int,
 foreign key (fkCliente) references CLIENTE (idCliente),
-primary key (idPlantacao,fkCliente),
-constraint chkmedida check (medida = 'm²')
+primary key (idPlantacao,fkCliente)
 )auto_increment=10;
 
 -- INSERINDO DADOS 
 insert into PLANTACAO values
-(null,'Arábica','MG','Carmo de Minas','m²',2, 100),
-(null,'Robusta','MT','Juína','m²',3, 101),
-(null,'Eugenioides','SP','Joanópolis','m²',10, 102),
-(null,'Arábica','MS','Eldorado','m²',1, 103),
-(null,'Robusta','SP','Campinas','m²',5, 101),
-(null,'Eugenioides','SP','Ribeirão Preto','m²',4, 102);
+(null,'Arábica','MG','Carmo de Minas',18.7, 100),
+(null,'Robusta','MT','Juína',15, 101),
+(null,'Eugenioides','SP','Joanópolis',10, 102),
+(null,'Arábica','MS','Eldorado',10.5, 103),
+(null,'Robusta','SP','Campinas',5, 101),
+(null,'Eugenioides','SP','Ribeirão Preto',12.2, 102);
 
 -- CRIANDO TABELA SENSOR
 create table SENSOR(
 idSensor int primary key auto_increment,
 Tipo varchar (10),
+Setor varchar (45),
 fkPlantacao int,
 foreign key (fkPlantacao) references PLANTACAO (idPlantacao)
 )auto_increment=500;
 
+
 -- INSERINDO DADOS
 insert into SENSOR values
-(null, 'DHT-11',10),
-(null,'DHT-11',11),
-(null, 'DHT-11', 12),
-(null,'DHT-11' , 13),
-(null,'DHT-11' , 14),
-(null,'DHT-11' , 15);
+(null, 'DHT-11','Sul',10),
+(null,'DHT-11','Leste',11),
+(null, 'DHT-11','Oeste', 12),
+(null,'DHT-11' ,'Sul', 13),
+(null,'DHT-11' ,'Leste', 14),
+(null,'DHT-11' ,'Norte', 15);
 
 -- CRIANDO TABELA DADOS
 create table DADOS(
@@ -81,6 +76,11 @@ insert into DADOS (Temperatura, Umidade, fkSensor) values
 	(20.0, '50%', 501),
 	(22.0, '80%', 500),
 	(19.5, '20%', 500);
+    
+select * from CLIENTE;
+select * from PLANTACAO;
+select * from SENSOR;
+select * from dados;
     
 select * from CLIENTE join PLANTAÇAO
 on idCliente = fkCliente;
