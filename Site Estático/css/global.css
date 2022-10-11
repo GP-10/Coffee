@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: rgba(0, 0, 0, 0.356);
+    background-color: rgba(138, 138, 138, 0.253);
     font-family: Play;
 }
 /* links */
@@ -155,7 +155,7 @@ main{
     margin-left: 10px;
 }
 
-/*Butaozinho delicia caramelo*/
+/*Butao*/
 .bnt{
     transition: .2s linear;
 }

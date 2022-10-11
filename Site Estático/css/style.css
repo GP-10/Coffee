@@ -77,7 +77,7 @@ main{
 
 /*valores*/
 .valores{
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(../src/img/QuemSomos.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(../src/img/valores.jpg);
     background-size: cover;
     background-position: center;
     height: 70vh;
@@ -159,6 +159,8 @@ main{
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    align-items: center;
+    justify-content: center;
 }
 .membros h1{
     font-size: 30px;
@@ -173,9 +175,12 @@ main{
     justify-content: space-around;
 }
 .foto{
-    border: 3px solid #860606;
+    width: 60%;
+}
+.membros .foto{
+    border: 3px solid #CF7726;
     border-radius: 200px;
 }
 .foto img{
-    width: 160px;
+    width: 100%;
 }
