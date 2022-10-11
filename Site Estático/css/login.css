@@ -52,7 +52,9 @@
     border-bottom: 2px solid black;
     padding: 5px;
 }
-
+input:houver{
+    color: white;
+}
 .informacoes{
     display: flex;
     justify-content: flex-end;

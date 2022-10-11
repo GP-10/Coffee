@@ -20,6 +20,7 @@ main{
 .logoProduct{
     margin-left: 30%;
     position: absolute;
+    margin-top: -5%;
 }
 .logoProduct img{
     height: 80vh;
@@ -27,6 +28,15 @@ main{
 
 .img2{
     transform: rotateY(180deg);
+}
+
+.slogan{
+    position: absolute;
+    font-size: 25px;
+    color: #99775C;
+    text-align: center;
+    margin-left: 30%;
+    margin-top: -12%;
 }
 
 footer{
