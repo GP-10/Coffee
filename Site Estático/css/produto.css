@@ -9,7 +9,6 @@ main{
 }
 .imagens{
     display: flex;
-    width: 100%;
     justify-content: space-between;
 }
 
@@ -18,12 +17,13 @@ main{
 }
 
 .logoProduct{
-    margin-left: 30%;
     position: absolute;
-    margin-top: -5%;
+    margin-left: 29%;
+    height: 25vh;
 }
 .logoProduct img{
     height: 80vh;
+    margin-top: -10%;
 }
 
 .img2{
@@ -36,7 +36,7 @@ main{
     color: #99775C;
     text-align: center;
     margin-left: 30%;
-    margin-top: -12%;
+    margin-top: -8%;
 }
 
 footer{
