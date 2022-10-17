@@ -27,10 +27,17 @@
 <main>
     <div class="container">
         <div class="formulario" id="formu">
-            <h1>Simulador Financeiro</h1><br>
+            <h1>Simulador Financeiro</h1>
                 <div class="form">
                     <div class="campo">
-                        <h4>Informe o tamanho da estufa (m2)</h4>
+                        <h4>Qual o tipo de café ?</h4><br>
+                        <select name="" id="sel_cafe">
+                            <option value="">- Escolha o tipo de café -</option>
+                            <option value="Arabica">Arábica</option>
+                            <option value="Robusta">Robusta</option>
+                            <option value="Liberica">Liberica</option>
+                        </select><br>
+                       <br> <h4>Informe o tamanho da estufa (m2)</h4>
                         <input id="in_tamanho"><br>
                     </div>
                     <button onclick="calcular()" class="bnt">Calcular</button>
@@ -81,15 +88,23 @@
         var metros = in_tamanho.value // quantos metros quadrados
         var kg = metros * 0.89 // quantos kilos faz um metro²
         var perda = kg * 0.20 // 20% de perda por conta da doença
-        var bruto = metros * 8.215 // quanto cada metro² faz em dinheiro
+        var bruto = metros * 8.22 // quanto cada metro² faz em dinheiro
         var dinheiro = bruto * 0.20 // perda em dinheiro referente aos 20% da doença 
         var sensor = 0.75 * metros // quanto sera gasto com sensor por metros
         var eco = (dinheiro - sensor) * metros // quanto sera economizado
         var total = metros * (dinheiro - sensor) // total economizados pelo total de metros
+        var tipoCafe = sel_cafe.value
 
 
-        formu.innerHTML= `<h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)} <br><br> Porém você perde entorno de 20% por conta de doenças como ferrugem de café, isso equivale a ${perda.toFixed(2)}Kg e em dinheiro isso se resulta a R$${dinheiro.toFixed(2)} <br><br> Com um pequeno custo de R$${sensor.toFixed(2)} para utilizar nosso sensor, seu prejuizo seria totalmente reduzido, resultando em um luco total de R$${total.toFixed(2)}</h4><br><br>
-        <button onclick ok()><a href="simulador.html>Faça outra simulação agora</a></button>"`
-        
+        if(tipoCafe == "Arabica") {
+            var bruto = metros * 18.67 
+            formu.innerHTML= `<h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)} <br><br> Porém você perde entorno de 20% por conta de doenças como ferrugem de café, isso equivale a ${perda.toFixed(2)}Kg e em dinheiro isso se resulta a R$${dinheiro.toFixed(2)} <br><br> Com um pequeno custo de R$${sensor.toFixed(2)} para utilizar nosso sensor, seu prejuizo seria totalmente reduzido, resultando em um luco total de R$${total.toFixed(2)}</h4><br><br>`
+        } else if(tipoCafe == "Robusta") {
+            var bruto = metros * 17.61
+            formu.innerHTML= `<h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)} <br><br> Porém você perde entorno de 20% por conta de doenças como ferrugem de café, isso equivale a ${perda.toFixed(2)}Kg e em dinheiro isso se resulta a R$${dinheiro.toFixed(2)} <br><br> Com um pequeno custo de R$${sensor.toFixed(2)} para utilizar nosso sensor, seu prejuizo seria totalmente reduzido, resultando em um luco total de R$${total.toFixed(2)}</h4><br><br>`
+        } else if(tipoCafe == "Liberica") {
+            var bruto = metros * 16.41
+            formu.innerHTML= `<h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)} <br><br> Porém você perde entorno de 20% por conta de doenças como ferrugem de café, isso equivale a ${perda.toFixed(2)}Kg e em dinheiro isso se resulta a R$${dinheiro.toFixed(2)} <br><br> Com um pequeno custo de R$${sensor.toFixed(2)} para utilizar nosso sensor, seu prejuizo seria totalmente reduzido, resultando em um luco total de R$${total.toFixed(2)}</h4><br><br>`
+        }
     }
 </script>
