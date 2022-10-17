@@ -8,6 +8,10 @@ body{
     background-color: rgba(138, 138, 138, 0.253);
     font-family: Play;
 }
+input{
+    color: white;
+    outline: none;
+}
 /* links */
 a{
     text-decoration: none;
