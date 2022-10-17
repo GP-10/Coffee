@@ -106,9 +106,14 @@ body{
     margin-top: 5%;
     width: 45%;
 }
+.graf_hbarra{
+    width: 45%;
+    margin-top: -22%;
+    margin-left: 50%;
+}
 .graf_barra{
     width: 45%;
-    margin-top: 1%;
+    margin-top: 5%;
     margin-left: 50%;
 }
 
