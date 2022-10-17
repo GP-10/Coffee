@@ -4,7 +4,7 @@
 }
 
 .formulario{
-    margin-left: -35%;
+    padding: 3px;
 }
 .formulario h1 {
     margin-top: 7%;
@@ -53,6 +53,7 @@ input{
 .image{
     margin-top: -29.2%;
     margin-left: 38.5%;
+    display: block;
 }
 .image img{
     height: 65vh;
@@ -61,4 +62,44 @@ input{
 #formu h4 {
     font-size: larger;
     justify-content: center;
+}
+
+/* resultado */
+.resultado{
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 300px;
+    position: relative;
+}
+.bnt-resultado{
+    height: 50px;
+    width: 20%;
+    padding: 10px 10px;
+    margin-left: 40%;
+    margin-top: 20px;
+    border: 2px solid #CF7726;
+    color: black;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+}
+.card{
+    height: 180px;
+    background-color: #cf7826;
+    width: 250px;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px 10px;
+}
+.card h4{
+    margin-top: 20px;
+    color: black;
+    font-style: italic;
+}
+.card h2{
+    margin-top: -20%;
+    font-size: 50px;
+    color: white;
 }
