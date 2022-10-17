@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/simulador.css">
+    <title>Coffe Helf</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="./src/img/logo.png" alt="" height="100px">
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html #about">SOBRE NOS</a></li>
+                    <li><a href="index.html #time">EQUIPE</a></li>
+                    <li><a href="#contact">CONTATO</a></li>
+                </ul>
+                <button><a href="cadastro.html">CADASTRAR</a></button>
+            </div> 
+    </header>
+<main>
+    <div class="container">
+        <div class="formulario" id="formu">
+            <h1>Simulador Financeiro</h1><br>
+                <div class="form">
+                    <div class="campo">
+                        <h4>Informe o tamanho da estufa (m2)</h4>
+                        <input id="in_tamanho"><br>
+                    </div>
+                    <button onclick="calcular()">Calcular</button>
+                </div>                
+        </div>
+    </div>
+    <div class="image">
+        <img src="./src/img/simulador.png" alt="">
+    </div>
+</main>
+
+<footer>
+    <div class="footer">
+        <div class="logo">
+           <img src="./src/img/logo.png" alt="">
+        </div>
+        <div class="container">
+            <div class="info">
+                <div class="nos">
+                    <h3>Sobre nos</h3>
+                    <p><a href="">Quem Somos</a></p>
+                    <p><a href="">Nossos Valores</a></p>
+                    <p><a href="">Projeto</a></p>
+                </div>
+                <div class="equi">
+                    <h3>Equipe</h3>
+                    <p><a href="">Nossos Membros</a></p>
+                    <p><a href="">Suas Funções</a></p>
+                </div>
+                <div class="informa">
+                    <h3>Contato</h3>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="p">
+            <p>Desenvolvido por alunos SPtechers - &copy; Copyright</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+<script>
+    function calcular() {
+       var metros = in_tamanho.value // quantos metros quadrados
+       var kg = metros * 0.89 // quantos kilos faz um metro²
+       var perda = kg * 0.20 // 20% de perda por conta da doença
+       var bruto = metros * 8.215 // quanto cada metro² faz em dinheiro
+       var dinheiro = bruto * 0.20 // perda em dinheiro referente aos 20% da doença 
+       var sensor = 0.75 * metros // quanto sera gasto com sensor por metros
+       var eco = (dinheiro - sensor) * metros // quanto sera economizado
+       var total = metros * (dinheiro - sensor) // total economizados pelo total de metros
+
+
+       formu.innerHTML= `<h4>De acordo com os dados inseridos, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)}. <br> Porém você perde entorno de 20% por conta de doenças como (a doença que escolhemos), isso equivale a ${perda.toFixed(2)}Kg, e em dinheiro isso se resulta a R$${dinheiro.toFixed(2)}. <br> Utilizando nosso sensor(nome do produto), você teria um pequeno custo de R$${sensor}, porém o prejuizo que você tem hoje seria totalmente reduzido, resultando em um luco total de R$${total.toFixed(2)}. Isso de acordo com o tamanho de sua estufa.</h4><br>
+       <button><a href="simulador.html>Faça outra simulação agora</a></button>"`
+       // div_resultado.innerHTML = `De acordo com os dados inseridos, você produz cerca de ${kg} kilos de café, entretanto cerca de 20% da produção é perdida devido a doenças, equivalente a ${perda} kilos e R${dinheiro}. Ao adquirir nossos serviços você economizara R$${eco}, totalizando R$495 de aumento, incluindo todo o gasto com os sensores`
+   }
+</script>
