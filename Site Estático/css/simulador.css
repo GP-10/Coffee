@@ -64,6 +64,12 @@ input{
     font-size: larger;
     justify-content: center;
 }
+select{
+    outline: none;
+    height: 30px;
+    width: 50%;
+    background-color: transparent;
+}
 
 /* resultado */
 .resultado{
@@ -81,9 +87,11 @@ input{
     margin-left: 40%;
     margin-top: 20px;
     border: 2px solid #CF7726;
-    color: black;
     background-color: Transparent;
     background-repeat: no-repeat;
+}
+.bnt-resultado a{
+    color: black;
 }
 .card{
     height: 180px;
