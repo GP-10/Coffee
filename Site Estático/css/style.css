@@ -181,13 +181,35 @@ main{
     margin-top: 5%;
     justify-content: space-around;
 }
+
 .foto{
-    width: 60%;
-}
-.membros .foto{
-    border: 3px solid #CF7726;
+    height: 10rem;
+    width: 10rem;
+    background-size: cover;
     border-radius: 200px;
+    border: 3px solid #CF7726;
 }
-.foto img{
-    width: 100%;
+.foto:houver{
+    height: 15vh;
+    transition: 0.s;
+    justify-content: space-around;
+}
+
+.nauana{
+    background-image: url(../src/img/nauana.jpeg);
+}
+.isaias{
+    background-image: url(../src/img/isaias.jpeg);
+}
+.matheus{
+    background-image: url(../src/img/matheus.jpeg);
+}
+.lucas{
+    background-image: url(../src/img/lucas.jpeg);
+}
+.jefferson{
+    background-image: url(../src/img/jefferson.png);
+}
+.yago{
+    background-image: url(../src/img/yago.jpeg);
 }
