@@ -85,25 +85,27 @@
 </html>
 <script>
      function calcular() {
-        var metros = in_tamanho.value // quantos metros quadrados
-        var kg = metros * 0.89 // quantos kilos faz um metro²
-        var perda = kg * 0.20 // 20% de perda por conta da doença
-        var bruto = metros * 8.22 // quanto cada metro² faz em dinheiro
-        var dinheiro = bruto * 0.20 // perda em dinheiro referente aos 20% da doença 
-        var sensor = 0.75 * metros // quanto sera gasto com sensor por metros
-        var eco = (dinheiro - sensor) * metros // quanto sera economizado
-        var total = metros * (dinheiro - sensor) // total economizados pelo total de metros
+        var metros = Number(in_tamanho.value) // quantos metros quadrados
+        var kg = Number(metros * 0.89) // quantos kilos faz um metro²
+        var perda = Number(kg * 0.20) // 20% de perda por conta da doença
+        var bruto = Number(metros * 8.22) // quanto cada metro² faz em dinheiro
+        var dinheiro = Number(bruto * 0.20) // perda em dinheiro referente aos 20% da doença 
+        var sensor = Number(0.75 * metros) // quanto sera gasto com sensor por metros
+        var eco = Number((dinheiro - sensor) * metros) // quanto sera economizado
         var tipoCafe = sel_cafe.value
-
-
+        
+        
         if(tipoCafe == "Arabica") {
-            var bruto = metros * 18.67 
+            bruto = metros * 18.67 
+            var total = bruto - sensor // total economizados pelo total de metros
             formu.innerHTML= `<h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)} <br><br> Porém você perde entorno de 20% por conta de doenças como ferrugem de café, isso equivale a ${perda.toFixed(2)}Kg e em dinheiro isso se resulta a R$${dinheiro.toFixed(2)} <br><br> Com um pequeno custo de R$${sensor.toFixed(2)} para utilizar nosso sensor, seu prejuizo seria totalmente reduzido, resultando em um luco total de R$${total.toFixed(2)}</h4><br><br>`
         } else if(tipoCafe == "Robusta") {
-            var bruto = metros * 17.61
+            bruto = metros * 17.61
+            var total = bruto - sensor
             formu.innerHTML= `<h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)} <br><br> Porém você perde entorno de 20% por conta de doenças como ferrugem de café, isso equivale a ${perda.toFixed(2)}Kg e em dinheiro isso se resulta a R$${dinheiro.toFixed(2)} <br><br> Com um pequeno custo de R$${sensor.toFixed(2)} para utilizar nosso sensor, seu prejuizo seria totalmente reduzido, resultando em um luco total de R$${total.toFixed(2)}</h4><br><br>`
         } else if(tipoCafe == "Liberica") {
-            var bruto = metros * 16.41
+            bruto = metros * 16.41
+            var total = bruto - sensor
             formu.innerHTML= `<h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)} <br><br> Porém você perde entorno de 20% por conta de doenças como ferrugem de café, isso equivale a ${perda.toFixed(2)}Kg e em dinheiro isso se resulta a R$${dinheiro.toFixed(2)} <br><br> Com um pequeno custo de R$${sensor.toFixed(2)} para utilizar nosso sensor, seu prejuizo seria totalmente reduzido, resultando em um luco total de R$${total.toFixed(2)}</h4><br><br>`
         }
     }
