@@ -90,7 +90,7 @@
         var perda = Number(kg * 0.20) // 20% de perda por conta da doença
         var bruto = Number(metros * 8.22) // quanto cada metro² faz em dinheiro
         var dinheiro = Number(bruto * 0.20) // perda em dinheiro referente aos 20% da doença 
-        var sensor = Number(0.75 * metros) // quanto sera gasto com sensor por metros
+        var sensor = 25 * (metros / 20) // quanto sera gasto com sensor por metros
         var tipoCafe = sel_cafe.value
         
         
@@ -127,7 +127,7 @@
     
     <div class="card producao">
         <h2>Produção</h2>
-        <h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)} }</h4>
+        <h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)}</h4>
     </div>
 
     <div class="card perda">

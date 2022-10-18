@@ -80,7 +80,7 @@
        var perda = kg * 0.20 // 20% de perda por conta da doença
        var bruto = metros * 8.215 // quanto cada metro² faz em dinheiro
        var dinheiro = bruto * 0.20 // perda em dinheiro referente aos 20% da doença 
-       var sensor = 0.75 * metros // quanto sera gasto com sensor por metros
+       var sensor = 25 * (metros / 20) // quanto sera gasto com sensor por metros
        var eco = (dinheiro - sensor) * metros // quanto sera economizado
        var total = metros * (dinheiro - sensor) // total economizados pelo total de metros
 
