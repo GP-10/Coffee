@@ -43,12 +43,12 @@
             
                         <div class="campo">
                             <h4>Senha</h4>
-                            <input type="text" id="in_password" placeholder="password">
+                            <input type="password" id="in_password" placeholder="Senha">
                         </div>
             
                         <div class="campo">
                             <h4>Confirmação de senha</h4>
-                            <input type="text" id="in_confirmpassword" placeholder="password">
+                            <input type="password" id="in_confirmpassword" placeholder="Confirmação de senha">
                         </div>
                         
                         <button class="bnt" onclick="cadastrar()">Cadastrar</button>
@@ -125,8 +125,10 @@
             // setInterval(sumirMensagem, 5000)
         }
 
-        // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
+        if(confirmacaoSenhaVar == senhaVar){
+            // Enviando o valor da nova input
+            
+         fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -138,7 +140,7 @@
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
-        }).then(function (resposta) {
+         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -156,16 +158,20 @@
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function (resposta) {
+         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             finalizarAguardar();
-        });
+         });
 
-        return false;
-    }
-
+            return false;
+        }
+        else{
+            alert('As senhas não coincidem!')
+        }
+}
     // function sumirMensagem() {
     //     cardErro.style.display = "none"
     // }
+
 
 </script>
