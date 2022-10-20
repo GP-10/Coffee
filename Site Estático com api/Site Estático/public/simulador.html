@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/global.css">
-    <link rel="stylesheet" href="./css/simulador.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/simulador.css">
     <title>Healt Tech</title>
 </head>
 <body>
     <header>
         <div class="navbar">
             <div class="logo">
-                <img src="./src/img/logo.png" alt="" height="100px">
+                <img src="src/img/logo.png" alt="" height="100px">
             </div>
             <div class="nav">
                 <ul>
@@ -44,7 +44,7 @@
                 </div>                
         </div>
     <div class="image">
-        <img src="./src/img/simulador2.png" alt="">
+        <img src="src/img/simulador2.png" alt="">
     </div>
 </div>
 </main>
@@ -52,7 +52,7 @@
 <footer id="contact">
     <div class="footer">
         <div class="logo">
-           <img src="./src/img/logo.png" alt="">
+           <img src="src/img/logo.png" alt="">
         </div>
         <div class="container">
             <div class="info">
@@ -69,10 +69,10 @@
                 </div>
                 <div class="informa">
                     <h3>Contato</h3>
-                    <img src="./src/img/facebook.png" alt="">
-                    <img src="./src/img/instagram.png" alt="">
-                    <img src="./src/img/linkedin.png" alt="">
-                    <img src="./src/img/o-email.png" alt="">
+                    <img src="src/img/facebook.png" alt="">
+                    <img src="src/img/instagram.png" alt="">
+                    <img src="src/img/linkedin.png" alt="">
+                    <img src="src/img/o-email.png" alt="">
                 </div>
             </div>
         </div>
@@ -84,24 +84,13 @@
 </body>
 </html>
 <script>
-<<<<<<< HEAD
-    function calcular() {
-       var metros = in_tamanho.value // quantos metros quadrados
-       var kg = metros * 0.89 // quantos kilos faz um metro²
-       var perda = kg * 0.20 // 20% de perda por conta da doença
-       var bruto = metros * 8.215 // quanto cada metro² faz em dinheiro
-       var dinheiro = bruto * 0.20 // perda em dinheiro referente aos 20% da doença 
-       var sensor = 25 * (metros / 20) // quanto sera gasto com sensor por metros
-       var eco = (dinheiro - sensor) * metros // quanto sera economizado
-       var total = metros * (dinheiro - sensor) // total economizados pelo total de metros
-=======
      function calcular() {
         var metros = Number(in_tamanho.value) // quantos metros quadrados
         var kg = Number(metros * 0.89) // quantos kilos faz um metro²
         var perda = Number(kg * 0.20) // 20% de perda por conta da doença
         var bruto = Number(metros * 8.22) // quanto cada metro² faz em dinheiro
         var dinheiro = Number(bruto * 0.20) // perda em dinheiro referente aos 20% da doença 
-        var sensor = Number(0.75 * metros) // quanto sera gasto com sensor por metros
+        var sensor = 25 * (metros / 20) // quanto sera gasto com sensor por metros
         var tipoCafe = sel_cafe.value
         
         
@@ -126,8 +115,6 @@
     </div>
 
 </div>
->>>>>>> 9245ec83448edf46da40f30229be03bafc45ea45
-
 
     <button class="bnt-resultado bnt"><a href="simulador.html">Nova Simulação</a></button>
 `
@@ -139,7 +126,7 @@
     
     <div class="card producao">
         <h2>Produção</h2>
-        <h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)} }</h4>
+        <h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)}</h4>
     </div>
 
     <div class="card perda">
