@@ -7,13 +7,14 @@
 body{
     background-color: rgba(0, 0, 0, 0.356);
     margin: 0 auto;
+    /* margin-right: 100%; */
     padding: 15px;
     
 }
 
 .janela {
     display: flex;
-    margin-left: 4%;
+    /* margin-left: 0%; */
     width: 100vw;
 }
 
@@ -104,7 +105,14 @@ body{
     display: flex;
     width: 94vw;
     flex-direction: column;
-}  
+} 
+
+.title{
+    display: flex;
+margin-top: -13%;
+margin-right: -10%;
+margin-left: 5%;
+}
   
 .cards{
     display: flex;
@@ -115,9 +123,9 @@ body{
 
 .cards div {
     
-    border-radius: 5px;
+    border-radius: 50px;
     box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
-    padding: 30px;
+    padding: 15px;
     margin: 20px;
     width: 150px;
     transition: all 0.3s ease-out;
