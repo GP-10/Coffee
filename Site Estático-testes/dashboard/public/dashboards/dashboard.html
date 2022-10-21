@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o chartJS</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../css/">
+    <script src="../js/funcoes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="janela">
+    <div class="header-left">
+      <h1>Grand Coffee</h1>
+
+      <img src="../src/img/user.png" class="userimg">
+      <div class="hello">
+        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+      </div>
+
+      <div class="btn-nav-white">
+        <img src="../src/img/home.png" class="img">
+        <a href="">
+          <h3>Perfil</h3>
+          </a>
+      </div>
+
+      <div class="btn-nav-white">
+        <img src="../src/img/setor.png" class="img">
+        <a href="">
+          <h3>Setores da Plantação</h3>
+          </a>
+      </div>
+
+      <div class="btn-nav-white">
+        <img src="../src/img/graf.png" class="img">
+        <a href="./graph.html">
+            <h3>Gráficos</h3>
+        </a>
+    </div>
+
+      <div class="btn-logout" onclick="limparSessao()">
+        <img src="../src/img/logout.png" alt="">
+          <h3>Sair</h3>
+      </div>
+
+    </div>
+  </div>
+
+<div class="janela">
+  <div class="cards">
+
+    <div class="card1">
+      <h2>ALERTA</h2>
+      <p>Menor que 3°</p>
+    </div>
+
+    <div class="card2">
+      <h2>RISCO</h2>
+      <p>Menor que x17°</p>
+    </div>
+
+    <div class="card3">
+      <h2>IDEAL</h2>
+      <p>Entre 18°C e 22°C</p>
+    </div>
+
+    <div class="card4">
+      <h2>RISCO</h2>
+      <p>Maior que 23°</p>
+    </div>
+
+    <div class="card5">
+      <h2>ALERTA</h2>
+      <p>Maior que 33°C ></p>
+    </div>
+</div>
+
+<div class="cards-setor">
+  <div class="container">
+    <div class="cards1">
+      <h1>Setor 1</h1>
+      <div class="temperatura">
+        <p id="temp_setor1">20 -°C</p>
+        <h5>5 minutos atrás</h5>
+      </div>
+    </div>
+    
+    <div class="cards2">
+      <h1>Setor 2</h1>
+      <div class="temperatura">
+        <p id="temp_setor2">20 -°C</p>
+        <h5>5 minutos atrás</h5>
+      </div>
+    </div>
+
+    <div class="cards3">
+      <h1>Setor 3</h1>
+      <div class="temperatura">
+        <p id="temp_setor3">18 -°C</p>
+        <h5>5 minutos atrás</h5>
+      </div>
+    </div>
+
+    <div class="cards4">
+      <h1>Setor 4</h1>
+      <div class="temperatura">
+        <p id="temp_setor4">34 -°C</p>
+        <h5>5 minutos atrás</h5>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+    
+ </html>
