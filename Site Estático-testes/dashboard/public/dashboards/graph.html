@@ -72,15 +72,27 @@
 
       <div class="graf_hbarra">
         <canvas id="hbarra"></canvas>
-     </div>
+      </div>
       
       <div class="graf_barra">
         <canvas id="Barra"></canvas>
       </div>
+    </div>
 
+      <div class="caixaP">
+
+        <div class="textoGrafico">
+          <h2>Grafico diario - Controle de Umidade</h2>
+        </div>
+        
+        <div class="porcentagem">
+          <h1>70%</h1>
+        </div>
+        
+      </div>
       
       
-  </div>
+      
 </div>
 
 </body>
@@ -153,15 +165,9 @@ const config1 = {
   const data = {
   labels: labels,
   datasets: [{
-    label: 'Perda COM o sensor',
-    backgroundColor: 'rgb(255, 99, 132)',
-    borderColor: 'rgb(255, 99, 132)',
-    data: [22, 24, 27, 23, 20, 18],
-  },
-  {
-    label: 'Perda SEM o sensor',
-    backgroundColor: 'rgb(0, 146, 255)',
-    borderColor: 'rgb(0, 146, 255)',
+    label: 'Grafico mensal - Controle de temperatura',
+    backgroundColor: 'rgba(207, 119, 38, 1)',
+    borderColor: 'rgba(207, 119, 38, 1)',
     data: [90, 89, 93, 87, 88, 82],
   },
   
@@ -194,56 +200,6 @@ const config = {
 
 
 </script>
-<!-- <script>
-  const config2 = {
-type: 'bar',
-data: data2,
-options: {
-  indexAxis: 'y',
-  // Elements options apply to all of the options unless overridden in a dataset
-  // In this case, we are setting the border of each horizontal bar to be 2px wide
-  elements: {
-    bar: {
-      borderWidth: 2,
-    }
-  },
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'right',
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Horizontal Bar Chart'
-    }
-  }
-},
-};
-</script>
-<script>
-  const DATA_COUNT = 7;
-const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
-
-const labels2 = Utils.months({count: 7});
-const data2 = {
-labels: labels2,
-datasets: [
-  {
-    label: 'hbarra',
-    data: Utils.numbers(NUMBER_CFG),
-    borderColor: Utils.CHART_COLORS.red,
-    backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
-  },
-  {
-    label: 'hbarra',
-    data: Utils.numbers(NUMBER_CFG),
-    borderColor: Utils.CHART_COLORS.blue,
-    backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
-  }
-]
-};
-</script> -->
-
 
 <script>
    const Linha = new Chart(
@@ -259,12 +215,7 @@ const Barra = new Chart(
 );
 </script>
 
-<!-- <script>
-  const hbarra = new Chart(
-    document.getElementById('hbarra'),
-    config2
-  );
-  </script> -->
+
 
 
 </body>

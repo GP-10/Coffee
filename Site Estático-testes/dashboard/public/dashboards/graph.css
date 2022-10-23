@@ -115,27 +115,27 @@ body {
 .graficos {
     display: flex;
     width: 100%;
-    box-shadow: 0px 4px 4px rgba(207, 119, 38, 0.5);
+    /* box-shadow: 0px 4px 4px rgba(207, 119, 38, 0.5); */
 }
 
 .graficos .container {
-    margin-left: 22%;
+    margin-left: 23%;
     width: 100%;
 }
 
 .graf_linha {
     background-color: rgba(16, 16, 16, 1);
-    padding: 50px;
-    width: 45%;
+    padding: 50px 75px;
+    width: 50%;
     border-radius: 10px;
 }
 
 .graf_barra {
     background-color: rgba(16, 16, 16, 1);
-    background-color: rgba(16, 16, 16, 1);
-    padding: 50px;
+    padding: 5px 10px;
+    height: 40%;
     margin-top: -13%;
-    width: 45%;
+    width: 44% ;
     border-radius: 10px;
 }
 
@@ -145,7 +145,7 @@ body {
     position: absolute;
     justify-content: center;
     text-align: center;
-    margin-left: 70%;
+    margin-left: 73%;
 }
 .div_represent{
     background-color: black;
@@ -154,13 +154,15 @@ body {
     height: 80px;
     padding-top: 1px;
     padding-bottom: 10px;
+    border-radius: 5px;
 }
 
 .div_nsensores{
     background-color: black;
     color: white;
     padding: 5px 10px;
-    margin-top: 10px
+    margin-top: 45px;
+    border-radius: 5px;
 }
 .sensor{
     border-bottom: 3px solid #cf7726;
@@ -170,3 +172,33 @@ body {
     font-size: 18px;
 }
 
+.caixaP {
+    position: absolute;
+    margin-left: 68%;
+    padding: 4%;
+    margin-top: 27%;
+    background-color: #000000;
+    height: 20%;
+    border-radius: 5px;
+}
+
+.textoGrafico{
+    color:white;
+    font-size: 60%;
+    margin-bottom: 5%;
+}
+.porcentagem{
+    color: white;
+    margin-left: 11% ;
+    background-color:#cf7726;
+    padding: 9%;
+    border-radius: 50%;
+    text-align: center;
+    width: 55%;
+}
+.textoGrafico h2{
+    margin-top: -14%;
+}
+.porcentagem h1{
+    font-size: 50px;
+}
