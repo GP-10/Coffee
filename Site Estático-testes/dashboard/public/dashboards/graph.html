@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,60 +8,78 @@
     <link rel="stylesheet" href="graph.css">
     <script src="../js/funcoes.js"></script>
     <title>Document</title>
-</head>
-<body>
-    
-  <div class="janela">
-    <div class="header-left">
-      <h1>Grand Coffee</h1>
+  </head>
+  <body>
 
-      <img src="../src/img/user.png" class="userimg">
-      <div class="hello">
-        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+    
+
+      <div class="div_represent">
+        <h2>Grand Coffe Representation</h2>
       </div>
 
-      <div class="btn-nav-white">
-        <img src="../src/img/home.png" class="img">
+        <div class="div_nsensores">
+          <div class="sensor">
+            <h2>Sesores Funcionando</h2>
+          </div>
+          <div class="number">
+            <h1>4</h1>
+          </div>
+      </div>
+
+    <div class="janela">
+      <div class="header-left">
+        <h1>Grand Coffee</h1>
+        
+        <img src="../src/img/user.png" class="userimg">
+        <div class="hello">
+          <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+        </div>
+        
+        <div class="btn-nav-white">
+          <img src="../src/img/home.png" class="img">
         <a href="">
           <h3>Perfil</h3>
           </a>
-      </div>
+        </div>
 
-      <div class="btn-nav-white">
-        <img src="../src/img/setor.png" class="img">
-        <a href="./dashboard.html">
-          <h3>Setores da Plantação</h3>
+        <div class="btn-nav-white">
+          <img src="../src/img/setor.png" class="img">
+          <a href="./dashboard.html">
+            <h3>Setores da Plantação</h3>
           </a>
-      </div>
+        </div>
 
       <div class="btn-nav-white">
         <img src="../src/img/graf.png" class="img">
         <a href="./graph.html">
-            <h3>Gráficos</h3>
+          <h3>Gráficos</h3>
         </a>
-    </div>
-
+      </div>
+      
       <div class="btn-logout" onclick="limparSessao()">
         <img src="../src/img/logout.png" alt="">
-          <h3>Sair</h3>
+        <h3>Sair</h3>
       </div>
-
+      
     </div>
   </div>
   
-<div class="graficos">
-  <div class="container">   
-    <div class="graf_linha">
-      <div class="cor-linha"><canvas id="Linha"></canvas></div>
-    </div>
+  <div class="graficos">
+    <div class="container">   
+      <div class="graf_linha">
+        <div class="cor-linha"><canvas id="Linha"></canvas></div>
+      </div>
 
-    <div class="graf_hbarra">
-      <canvas id="Hbarra"></canvas>
+      <div class="graf_hbarra">
+        <canvas id="hbarra"></canvas>
      </div>
+      
+      <div class="graf_barra">
+        <canvas id="Barra"></canvas>
+      </div>
 
-    <div class="graf_barra">
-     <canvas id="Barra"></canvas>
-    </div>
+      
+      
   </div>
 </div>
 
@@ -129,7 +147,7 @@ const config1 = {
     'Maio',
     'Junho',
   ];
-
+  
   
 
   const data = {
@@ -173,7 +191,59 @@ const config = {
   
   
 };
+
+
 </script>
+<!-- <script>
+  const config2 = {
+type: 'bar',
+data: data2,
+options: {
+  indexAxis: 'y',
+  // Elements options apply to all of the options unless overridden in a dataset
+  // In this case, we are setting the border of each horizontal bar to be 2px wide
+  elements: {
+    bar: {
+      borderWidth: 2,
+    }
+  },
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'right',
+    },
+    title: {
+      display: true,
+      text: 'Chart.js Horizontal Bar Chart'
+    }
+  }
+},
+};
+</script>
+<script>
+  const DATA_COUNT = 7;
+const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
+
+const labels2 = Utils.months({count: 7});
+const data2 = {
+labels: labels2,
+datasets: [
+  {
+    label: 'hbarra',
+    data: Utils.numbers(NUMBER_CFG),
+    borderColor: Utils.CHART_COLORS.red,
+    backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
+  },
+  {
+    label: 'hbarra',
+    data: Utils.numbers(NUMBER_CFG),
+    borderColor: Utils.CHART_COLORS.blue,
+    backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
+  }
+]
+};
+</script> -->
+
 
 <script>
    const Linha = new Chart(
@@ -188,6 +258,14 @@ const Barra = new Chart(
   config
 );
 </script>
+
+<!-- <script>
+  const hbarra = new Chart(
+    document.getElementById('hbarra'),
+    config2
+  );
+  </script> -->
+
 
 </body>
 </html>

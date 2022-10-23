@@ -1,7 +1,7 @@
 
-create database EMPRESA;
+create database HEALT_TECH;
 
-use EMPRESA;
+use HEALT_TECH;
 
 -- CRIANDO A TABELA DE CADASTRO
 create table CLIENTE(

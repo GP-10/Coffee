@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 
-*{
+* {
     font-family: Play;
 }
 
-body{
+body {
     background-color: rgba(0, 0, 0, 0.356);
     max-width: 195vh;
     max-height: 45vh;
-    
+
 }
 
 .janela {
@@ -21,7 +21,7 @@ body{
 .header-left a {
     text-decoration: none;
     color: white;
-  }
+}
 
 .header-left {
     position: fixed;
@@ -48,57 +48,57 @@ body{
     justify-content: center;
 }
 
-.userimg{
+.userimg {
 
     width: 92px;
     height: 92px;
     left: 103px;
     top: 135px;
-        
+
 }
-  
+
 .hello h3 {
     color: #e3b062;
     font-weight: 300;
     font-size: 1.2rem;
 }
-  
+
 .hello h3 span {
     font-weight: 800;
 }
 
 .btn-nav {
-  width: 40%;
-  color: white;
-  background-color: #000000;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
+    width: 40%;
+    color: white;
+    background-color: #000000;
+    border-radius: 5px;
+    text-align: center;
+    padding: 2% 5%;
 }
 
 .btn-nav-white {
-  text-align: center;
-  width: 50%;
+    text-align: center;
+    width: 50%;
 }
 
-.header-left .img{
+.header-left .img {
 
     margin-left: -100%;
     margin-bottom: -25%;
 }
 
 .btn-nav-white h3 {
-  color: rgb(207, 119, 38);
-  font-weight: 400;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 50px;
+    color: rgb(207, 119, 38);
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 50px;
 }
 
 .btn-nav h3,
 .btn-logout h3 {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .btn-logout {
@@ -106,31 +106,32 @@ body{
     margin: 0;
     padding: 0;
     color: white;
-    text-align: center; 
+    text-align: center;
     margin-bottom: 50px;
     cursor: pointer;
 }
 
 
-.graficos{
+.graficos {
     display: flex;
     width: 100%;
     box-shadow: 0px 4px 4px rgba(207, 119, 38, 0.5);
 }
 
-.graficos .container{
+.graficos .container {
     margin-left: 22%;
     width: 100%;
 }
-.graf_linha{
+
+.graf_linha {
     background-color: rgba(16, 16, 16, 1);
     padding: 50px;
     width: 45%;
     border-radius: 10px;
 }
-.graf_barra{
+
+.graf_barra {
     background-color: rgba(16, 16, 16, 1);
-    margin-left: 55%;
     background-color: rgba(16, 16, 16, 1);
     padding: 50px;
     margin-top: -13%;
@@ -138,4 +139,38 @@ body{
     border-radius: 10px;
 }
 
+
+.div_represent {
+    margin-left: 75%;
+    height: 20px;
+}
+
+.div_represent h2 {
+    background-color: #000000;
+    color: rgb(207, 119, 38, 0.5);
+    padding: 35px;
+    height: 2px;
+    margin-left: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.sensor {
+    margin-bottom: 2px solid rgb(207, 119, 38, 0.5);;
+}
+
+
+.div_nsensores{
+    display: flex;
+    justify-content: center;
+    background-color: #000000;
+    color: aliceblue;
+}
+.div_nsensores{
+    padding: 40px;
+    height: 100px;
+    margin-inline: 3px solid white;
+    
+}
 
