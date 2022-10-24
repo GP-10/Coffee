@@ -152,12 +152,13 @@ options: {
 </script>
 <script>
 const labels = [ 
-  'Janeiro',
-  'Fevereiro',
-  'Março',
-  'Abril',
-  'Maio',
-  'Junho',
+  'Seg',
+  'Ter',
+  'Qua',
+  'Qui',
+  'Sex',
+  'Sab',
+  'Dom',
 ];
 
 
@@ -165,10 +166,10 @@ const labels = [
 const data = {
 labels: labels,
 datasets: [{
-  label: 'Grafico mensal - Controle de temperatura',
+  label: 'Grafico Semanal - Controle de temperatura',
   backgroundColor: 'rgba(207, 119, 38, 1)',
   borderColor: 'rgba(207, 119, 38, 1)',
-  data: [90, 89, 93, 87, 88, 82],
+  data: [90, 89, 93, 87, 88, 82,89],
 },
 
 ]
@@ -206,9 +207,6 @@ const labels2 = [
   'Janeiro',
   'Fevereiro',
   'Março',
-  'Abril',
-  'Maio',
-  'Junho',
 ];
 
 
@@ -216,10 +214,10 @@ const labels2 = [
 const data2 = {
 labels: labels2,
 datasets: [{
-  label: 'Temperatura',
+  label: 'Grafico Mensal - Controle de temperatura',
   backgroundColor: 'rgba(207, 119, 38, 1)',
   borderColor: 'rgba(207, 119, 38, 1)',
-  data: [90, 89, 93, 87, 88, 82],
+  data: [90, 89, 93],
 },
 
 ]
@@ -236,16 +234,6 @@ options: {
   elements: {
     bar: {
       borderWidth: 2,
-    }
-  },
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'right',
-    },
-    title: {
-      display: true,
-      text: 'Grafico mensal (Ultimo sete meses) controle de temperatura'
     }
   }
 },

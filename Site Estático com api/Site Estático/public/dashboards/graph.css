@@ -126,28 +126,29 @@ body {
 
 .graf_linha {
     background-color: rgba(16, 16, 16, 1);
-    padding: 30px 80px;
+    padding: 40px 90px;
     width: 75%;
+    height: 40%;
     border-radius: 10px;
     margin-top: 10px;
 }
 
 .graf_barra {
     background-color: rgba(16, 16, 16, 1);
-    padding: 6px;
-    height: 40%;
-    margin-top: 5%;
-    width: 58% ;
+    padding: 15px  0px;
+    height: 35%;
+    margin-top: 3%;
+    width: 50% ;
     border-radius: 10px;
 }
  .graf_hbarra{
     display: flex;
     background-color: rgba(16, 16, 16, 1);
-    padding: 50px;
+    padding: 42px 20px ;
     height: 40%;
-    margin-top: 25%;
-    margin-left:-18% ;
-    width: 90%;
+    width: 40%;
+    margin-top: 29%;
+    margin-left:-28% ;
     border-radius: 10px;
 } 
 
@@ -186,9 +187,9 @@ body {
 
 .caixaP {
     position: relative;
-    margin-left: 25px;
-    padding: 15px 58px;
-    margin-top: 28%;
+    margin-left: 52px;
+    padding: 13px 57px;
+    margin-top: 29%;
     background-color: #000000;
     height: 20%;
     border-radius: 5px;
@@ -205,7 +206,7 @@ body {
     margin-left: 2% ;
     background-color:#cf7726;
     margin-top: 20px;
-    padding: 20px 35px;
+    padding: 21px 38px;
     border-radius: 80%;
     text-align: center;
     width: 55%;
