@@ -69,7 +69,9 @@ select{
     outline: none;
     height: 30px;
     width: 50%;
-    background-color: transparent;
+    background-color: black;
+    border-color: #CF7726;
+    color: white;
 }
 
 /* resultado */
