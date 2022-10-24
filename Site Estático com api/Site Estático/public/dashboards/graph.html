@@ -7,187 +7,278 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="graph.css">
     <script src="../js/funcoes.js"></script>
-    <title>Document</title>
+    <link rel="icon" type="imagem/png" href="../src/img/icon.png" />
+    <title>Healt Tech</title>
 </head>
 <body>
-    
+ 
+  <div class="indicadores">
+    <div class="div_represent">
+      <h2>Grand Coffe Representation</h2>
+    </div>
+
+      <div class="div_nsensores">
+        <div class="sensor">
+          <h2>Sensores Funcionando</h2>
+        </div>
+        <div class="number">
+          <h1>4</h1>
+        </div>
+    </div>
+  </div>
+
   <div class="janela">
     <div class="header-left">
       <h1>Grand Coffee</h1>
-
+      
       <img src="../src/img/user.png" class="userimg">
       <div class="hello">
         <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
       </div>
-
+      
       <div class="btn-nav-white">
         <img src="../src/img/home.png" class="img">
-        <a href="">
-          <h3>Perfil</h3>
-          </a>
+      <a href="">
+        <h3>Perfil</h3>
+        </a>
       </div>
 
       <div class="btn-nav-white">
         <img src="../src/img/setor.png" class="img">
         <a href="./dashboard.html">
           <h3>Setores da Plantação</h3>
-          </a>
-      </div>
-
-      <div class="btn-nav-white">
-        <img src="../src/img/graf.png" class="img">
-        <a href="./graph.html">
-            <h3>Gráficos</h3>
         </a>
-    </div>
-
-      <div class="btn-logout" onclick="limparSessao()">
-        <img src="../src/img/logout.png" alt="">
-          <h3>Sair</h3>
       </div>
 
+    <div class="btn-nav-white">
+      <img src="../src/img/graf.png" class="img">
+      <a href="./graph.html">
+        <h3>Gráficos</h3>
+      </a>
     </div>
+    
+    <div class="btn-logout" onclick="limparSessao()">
+      <img src="../src/img/logout.png" alt="">
+      <h3>Sair</h3>
+    </div>
+    
   </div>
-  
+</div>
+
 <div class="graficos">
   <div class="container">   
     <div class="graf_linha">
       <div class="cor-linha"><canvas id="Linha"></canvas></div>
     </div>
 
-    <div class="graf_hbarra">
-      <canvas id="Hbarra"></canvas>
-     </div>
-
+    
     <div class="graf_barra">
-     <canvas id="Barra"></canvas>
+      <canvas id="Barra"></canvas>
     </div>
   </div>
+  
+  <div class="graf_hbarra">
+    <canvas id="hbarra"></canvas>
+  </div>
+    <div class="caixaP">
+
+      <div class="textoGrafico">
+        <h2>Grafico diario  Controle de Umidade</h2>
+      </div>
+      
+      <div class="porcentagem">
+        <h1>70%</h1>
+      </div>
+      
+    </div>
+    
+    
+    
 </div>
 
 </body>
 
 
 <script>
-  const labels1 = [
-    'Janeiro',
-    'Fevereiro',
-    'Março',
-    'Abril',
-    'Maio',
-    'Junho',
-  ];
-  
-  const data1 = {
-    labels: labels1,
-    datasets: [{
-      label: 'Temperatura média',
-      backgroundColor: 'rgba(207, 119, 38, 1)',
-      borderColor: 'rgba(207, 119, 38, 1)',
-      
-      data: [22, 24, 27, 23, 20, 18],
-    },
-    {
-      label: 'Umidade Média',
-      backgroundColor: 'rgba(207, 119, 38, 1)',
-      borderColor: 'rgba(207, 119, 38, 1)',
-      border: '2px',
-      data: [90, 89, 93, 87, 88, 82],
-    }
-  ]
-};
+const labels1 = [
+  'Janeiro',
+  'Fevereiro',
+  'Março',
+  'Abril',
+  'Maio',
+  'Junho',
+];
 
-const config1 = {
-  type: 'line',
-  data: data1,
-  options: {
-    scales: {
-      x: {
-        grid: {
-          // display: false,
-          color: 'rgba(207, 119, 38, 1)',
-        },
-      },
-
-      y: {
-        grid: {
-          // display: false,
-          color: 'rgba(207, 119, 38, 0.4)',
-        },
-      },
-    },
-  }
-  
-};
-</script>
-<script>
-  const labels = [ 
-    'Janeiro',
-    'Fevereiro',
-    'Março',
-    'Abril',
-    'Maio',
-    'Junho',
-  ];
-
-  
-
-  const data = {
-  labels: labels,
+const data1 = {
+  labels: labels1,
   datasets: [{
-    label: 'Perda COM o sensor',
-    backgroundColor: 'rgb(255, 99, 132)',
-    borderColor: 'rgb(255, 99, 132)',
+    label: 'Temperatura média',
+    backgroundColor: 'rgba(207, 119, 38, 1)',
+    borderColor: 'rgba(207, 119, 38, 1)',
+    
     data: [22, 24, 27, 23, 20, 18],
   },
   {
-    label: 'Perda SEM o sensor',
-    backgroundColor: 'rgb(0, 146, 255)',
-    borderColor: 'rgb(0, 146, 255)',
+    label: 'Umidade Média',
+    backgroundColor: 'rgba(207, 119, 38, 1)',
+    borderColor: 'rgba(207, 119, 38, 1)',
+    border: '2px',
     data: [90, 89, 93, 87, 88, 82],
+  }
+]
+};
+
+const config1 = {
+type: 'line',
+data: data1,
+options: {
+  scales: {
+    x: {
+      grid: {
+        // display: false,
+        color: 'rgba(207, 119, 38, 1)',
+      },
+    },
+
+    y: {
+      grid: {
+        // display: false,
+        color: 'rgba(207, 119, 38, 0.4)',
+      },
+    },
   },
-  
+}
+
+};
+</script>
+<script>
+const labels = [ 
+  'Janeiro',
+  'Fevereiro',
+  'Março',
+  'Abril',
+  'Maio',
+  'Junho',
+];
+
+
+
+const data = {
+labels: labels,
+datasets: [{
+  label: 'Grafico mensal - Controle de temperatura',
+  backgroundColor: 'rgba(207, 119, 38, 1)',
+  borderColor: 'rgba(207, 119, 38, 1)',
+  data: [90, 89, 93, 87, 88, 82],
+},
+
 ]
 };
 
 
 const config = {
-  type: 'bar',
-  data: data,
-  options: {
-    scales: {
-      x: {
-        grid: {
-          display: false,
-        },
-      },
-
-      y: {
-        grid: {
-          // display: false,
-          color: 'rgb(207, 119, 38)',
-        },
+type: 'bar',
+data: data,
+options: {
+  scales: {
+    x: {
+      grid: {
+        display: false,
       },
     },
+
+    y: {
+      grid: {
+        // display: false,
+        color: 'rgb(207, 119, 38)',
+      },
+    },
+  },
 }
-  
-  
+
+
 };
+
+
 </script>
 
 <script>
-   const Linha = new Chart(
-     document.getElementById('Linha'),
-     config1
-   );
+const labels2 = [ 
+  'Janeiro',
+  'Fevereiro',
+  'Março',
+  'Abril',
+  'Maio',
+  'Junho',
+];
+
+
+
+const data2 = {
+labels: labels2,
+datasets: [{
+  label: 'Temperatura',
+  backgroundColor: 'rgba(207, 119, 38, 1)',
+  borderColor: 'rgba(207, 119, 38, 1)',
+  data: [90, 89, 93, 87, 88, 82],
+},
+
+]
+};
+
+
+const config2 = {
+type: 'bar',
+data: data2,
+options: {
+  indexAxis: 'y',
+  // Elements options apply to all of the options unless overridden in a dataset
+  // In this case, we are setting the border of each horizontal bar to be 2px wide
+  elements: {
+    bar: {
+      borderWidth: 2,
+    }
+  },
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'right',
+    },
+    title: {
+      display: true,
+      text: 'Grafico mensal (Ultimo sete meses) controle de temperatura'
+    }
+  }
+},
+};
+
+
+</script> -->
+
+<script>
+ const Linha = new Chart(
+   document.getElementById('Linha'),
+   config1
+ );
 </script>
+
+<script>
+const hbarra = new Chart(
+  document.getElementById('hbarra'),
+  config2
+);
+</script> -->
 
 <script>
 const Barra = new Chart(
-  document.getElementById('Barra'),
-  config
+document.getElementById('Barra'),
+config
 );
 </script>
+
+
+
+
 
 </body>
 </html>

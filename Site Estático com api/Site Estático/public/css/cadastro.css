@@ -17,14 +17,15 @@
 }
 
 .form button{
-    height: 20%;
-    width: 30%;
+    height: 8%;
+    width: 15%;
     padding: 10px;
     border: 2px solid black;
     color: white;
     background-color: Transparent;
     background-repeat:no-repeat;
-    margin-left: 65%;
+    position: absolute;
+    margin-left: 35%;
 }
 
 .campo {
@@ -56,6 +57,10 @@
     border-bottom: 2px solid black;
     padding: 5px;
 }
+input{
+    color: white;
+    outline: none;
+}
 
 .informacoes{
     display: flex;
@@ -64,7 +69,7 @@
     margin-left: 10%;
     color: white;
     font-size: 18px;
-    margin-top: -9%;
+    width: 40%;
 }
 .informacoes h4{
     margin-top: 5px;
@@ -75,6 +80,9 @@
 
 .imageCAD{
     margin-left: 70%;
-    margin-top: -60%;
-    height: 20%;
+    margin-top: -55%;
+    height: 50vh;
+}
+.imageCAD img{
+    height: 70vh;
 }

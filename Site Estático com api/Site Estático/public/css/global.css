@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: rgba(0, 0, 0, 0.356);
+    background-color: rgba(138, 138, 138, 0.253);
     font-family: Play;
 }
 /* links */
@@ -60,7 +60,7 @@ a{
     margin-top: 10px;
     height: 65%;
     width: 30%;
-    padding: 14px 30px;
+    padding: 5px 30px 5px 30px;
     border-radius: 2px;
     border-color: #CF7726;
     color:#CF7726;
@@ -70,6 +70,8 @@ a{
 .nav button a{
     color: #CF7726;
 }
+
+
 
 /*main*/
 main{
