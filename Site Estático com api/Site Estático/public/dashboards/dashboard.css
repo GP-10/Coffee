@@ -120,11 +120,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 20%;
+    margin-left: 22%;
 }
 
 .cards div {
-    padding: 30px;
+    padding: 10px;
+    height: 40%;
     margin: 20px;
     width: 150px;
     transition: all 0.3s ease-out;
@@ -171,21 +172,26 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     height: 450px;
-    width: 100%;
+    width: 98.5%;
     align-items: center;
-    color: white;
+    color: white;   
 }
 
 .cards-setor .container{
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     flex-direction: row;
     flex-wrap: wrap;
+    margin-left: 10%;
+    width: 80%;
+    
 }
 
 .cards1, .cards2, .cards3{
     margin: 2%;
     width: 40%;
+    height: 50%;
+    padding: 20px;
     flex-wrap: wrap;
     display: flex;
     text-align: center;
@@ -200,11 +206,14 @@ body{
     font-size: 50px;
     font-weight: lighter;
     text-align: left;
+    margin-left: -10%;
 }
 
 .cards4{
     margin: 2%;
     width: 40%;
+    height: 50%;
+    padding: 20px;
     flex-wrap: wrap;
     display: flex;
     text-align: center;
