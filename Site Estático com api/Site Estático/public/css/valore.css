@@ -1,0 +1,29 @@
+
+*{
+background-color: black;
+}
+.navbar{
+    background-color: black;
+    position: relative;
+    border-bottom: 3px solid #CF7726;
+}
+footer{
+    border-top: 3px solid #CF7726;
+}
+
+.valores{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 90vh;
+}
+.valor{
+    margin-top: 10%;
+}
+.valor img{
+    height: 35vh;
+    width: 100%;
+}
+.valor p{
+    color: white;
+}
