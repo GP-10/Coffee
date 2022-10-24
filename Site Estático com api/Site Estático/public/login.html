@@ -108,8 +108,7 @@
         var senhaVar = password.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            alert('Por favor, preencha todos os campos!')
             finalizarAguardar();
             return false;
         }
@@ -151,10 +150,10 @@
                 });
 
             } else {
-
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {
+                    alert(`Houve um erro ao tentar realizar o login! ${texto}`)
                     console.error(texto);
                     finalizarAguardar(texto);
                 });
