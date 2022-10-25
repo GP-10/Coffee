@@ -33,7 +33,7 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    border-right: 3px solid #32b9cd;
+    border-right: 3px solid rgb(207, 119, 38);
     background-color: #212124;
 }
 
