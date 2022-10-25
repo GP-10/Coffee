@@ -138,35 +138,30 @@ body {
 .graf_barra {
     position: relative;
     background-color: rgba(16, 16, 16, 1);
-<<<<<<< HEAD
     padding: 15px  0px;
     height: 32vh;
     margin-top: 3%;
     width: 55vh ;
-=======
     padding: 7% 1%;
     height: 30%;
     margin-top: 5.5%;
     width: 75% ;
->>>>>>> bcbd7d2a775c144f4b65b83b9b35f9440bf8b194
     border-radius: 10px;
 }
  .graf_hbarra{
     position: relative;
     background-color: rgba(16, 16, 16, 1);
-<<<<<<< HEAD
     padding: 42px 20px ;
     height: 25vh;
     width: 60vh;
     margin-top: 25.5%;
     margin-left: -18.5% ;
-=======
     padding: 4.1% 2% ;
     height: 45%;
     width: 100%;
     margin-top: 28%;
     margin-left:-8% ;
->>>>>>> bcbd7d2a775c144f4b65b83b9b35f9440bf8b194
+
     border-radius: 10px;
 } 
 
@@ -206,19 +201,16 @@ body {
 .caixaP {
     position: relative;
     margin-left: 2%;
-<<<<<<< HEAD
     padding: 13px 57px;
     margin-top: 25.5%;
     background-color: #000000;
     height: 33vh;
     border-radius: 5px;
-=======
     padding: 1.7% 5%;
     margin-top: 28%;
     background-color: #000000;
     height: 20%;
     border-radius: 10px;
->>>>>>> bcbd7d2a775c144f4b65b83b9b35f9440bf8b194
 }
 
 .textoGrafico{
