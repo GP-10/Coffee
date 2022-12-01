@@ -5,68 +5,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/plantacao.css">
     <link rel="stylesheet" href="js/funcoes.js">
     <link rel="icon" type="imagem/png" href="src/img/icon.png" />
-    <title>Health Tech</title>
+    <title>Cadastro | Plantação</title>
 </head>
 <body>
+<!-- HEADER -->
+
     <header>
         <div class="navbar">
-            <div class="logo">
-                <img src="src/img/logo2.png" alt="" height="100px">
-            </div>
-            <div class="nav">
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="index.html #about">SOBRE NOS</a></li>
-                    <li><a href="index.html #time">EQUIPE</a></li>
-                    <li><a href="#contact">CONTATO</a></li>
-                </ul>
-                <button class="bnt"><a href="login.html">LOGIN</a></button>
-            </div>
+        <div class="logo">
+            <img src="src/img/logo2.png" alt="" height="100px">
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="">PERFIL</a></li>
+                <li><a href="index.html #time">EQUIPE</a></li>
+                <li><a href="#contact">CONTATO</a></li>
+            </ul>
     </header>
+
+<!-- BANNER -->
 
     <main>
         <div class="container">
             <div class="formulario">
-                <h1>Cadastro</h1>
+                <h1>Cadastro Plantação</h1>
                     <div class="form">
                         <div class="campo">
-                            <h4>Nome</h4>
-                            <input type="text" id="in_nome" placeholder="Nome">
+                            <h4>Espécie</h4>
+                            <input type="text" id="in_especie" placeholder="Espécie da plantação">
                         </div>
-            
                         <div class="campo">
-                            <h4>E-mail</h4>
-                            <input type="email" id="in_email" placeholder="Email@email.com">
+                            <h4>Estado</h4>
+                            <select name="" id="sel_estado">
+                                <option value="">-- ESTADO--</option>
+                                <option value="1">AC</option>
+                                <option value="2">AL</option>
+                                <option value="3">AP</option>
+                                <option value="4">AM</option>
+                                <option value="5">BA</option>
+                                <option value="6">CE</option>
+                                <option value="7">DF</option>
+                                <option value="8">ES</option>
+                                <option value="9">GO</option>
+                                <option value="10">MA</option>
+                                <option value="11">MT</option>
+                                <option value="12">MS</option>
+                                <option value="13">MG</option>
+                                <option value="14">PA</option>
+                                <option value="15">PB</option>
+                                <option value="16">PR</option>
+                                <option value="17">PE</option>
+                                <option value="18">PI</option>
+                                <option value="19">RJ</option>
+                                <option value="20">RN</option>
+                                <option value="21">RS</option>
+                                <option value="22">RO</option>
+                                <option value="23">RR</option>
+                                <option value="24">SC</option>
+                                <option value="25">SP</option>
+                                <option value="26">SE</option>
+                                <option value="27">TO</option>
+                            </select>
                         </div>
-            
                         <div class="campo">
-                            <h4>Senha</h4>
-                            <input type="password" id="in_password" placeholder="password">
+                            <h4>Cidade</h4>
+                            <input type="text" id="in_cidade" placeholder="Cidade">
                         </div>
-            
                         <div class="campo">
-                            <h4>Confirmação de senha</h4>
-                            <input type="password" id="in_confirmpassword" placeholder="password">
+                            <h4>Tamanho (m²)</h4>
+                            <input type="text" id="in_tamanho" placeholder="Tamanho da Plantação">
                         </div>
-                        <button class="bnt" onclick="cadastrar()">Cadastrar</button>
+                        <button class="bnt" onclick="cadastrar()">Cadastrar Plantação</button>
             
                     </div>
-            
-                    <div class="informacoes">
-                        <h4>Já possui cadastro?<a href="login.html" style="color: #CF7726;"> Login</a>
-                    </h4>
-                    </div>
-
+                    
                     <div class="imageCAD">
                         <img src="src/img/login.png" alt="">
                     </div>
                 </div>
             </div>
-        
     </main>
+
+<!-- FOOTER -->
 
     <footer id="contact">
         <div class="footer">
@@ -100,21 +124,20 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
 <script>
-    function cadastrar() {
+     function cadastrar() {
         // aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
-        var nomeVar = in_nome.value;
-        var emailVar = in_email.value;
-        var senhaVar = in_password.value;
-        var confirmacaoSenhaVar = in_confirmpassword.value;
+        var especieVar = in_especie.value;
+        var estadoVar = sel_estado.value;
+        var cidadeVar = in_cidade.value;
+        var tamanhoVar = in_tamanho.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (especieVar == "" || estadoVar == "" || cidadeVar == "" || tamanhoVar == "") {
             alert('Por favor, preencha todos os campos para prosseguir!')
 
             finalizarAguardar();
@@ -133,9 +156,10 @@
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar
+                especieServer0: especieVar,
+                estadoServer: estadoVar,
+                cidadeServer: cidadeVar,
+                tamanhoServer: tamanhoVar
             })
         }).then(function (resposta) {
 
