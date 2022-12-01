@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+* {
+    font-family: Play;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.356);
+    max-width: 195vh;
+    max-height: 45vh;
+
+}
+
+.janela {
+    display: flex;
+    margin-left: 4%;
+    max-width: 10vh;
+    margin-top: 4%;
+}
+
+.header-left a {
+    text-decoration: none;
+    color: white;
+}
+
+.header-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100vh;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-right: 3px solid rgb(207, 119, 38);
+    background-color: #212124;
+}
+
+.header-left h1 {
+    color: #68543e;
+}
+
+.hello {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.userimg {
+
+    width: 92px;
+    height: 92px;
+    left: 103px;
+    top: 135px;
+
+}
+
+.hello h3 {
+    color: #e3b062;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.hello h3 span {
+    font-weight: 800;
+}
+
+.btn-nav {
+    width: 40%;
+    color: white;
+    background-color: #000000;
+    border-radius: 5px;
+    text-align: center;
+    padding: 2% 5%;
+}
+
+.btn-nav-white {
+    text-align: center;
+    width: 50%;
+}
+
+.header-left .img {
+
+    margin-left: -100%;
+    margin-bottom: -25%;
+}
+
+.btn-nav-white h3 {
+    color: rgb(207, 119, 38);
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+.btn-nav h3,
+.btn-logout h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.btn-logout {
+    margin-top: 100px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+main {
+    margin-left: 23%;
+    margin-top: -1%;
+}
+
+.navbar{
+    background-color: black;
+    position: relative;
+}
+
+.formulario{
+    height: 520px;
+    width: 85%;
+    padding-bottom: 25px;
+}
+
+.formulario h1{
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+.form{
+    margin: 5%;
+}
+
+.form button{
+    height: 8%;
+    width: 20%;
+    padding: 10px;
+    border: 2px solid black;
+    color: white;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    margin-left: 3%;
+}
+
+.campo {
+    font-size: 20px;
+    justify-content: flex-start;
+    margin: 3%;
+}
+
+.campo input{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    border-bottom: 2px solid black;
+    height: 5%;
+    width: 70%;
+    padding: 5px;
+}
+
+.lembre{
+    display: flex;
+    margin: 10px;
+    margin-left: 15%;
+}
+
+.lembre p{
+    margin-left: 10px;
+}
+
+.lembre input{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border-bottom: 2px solid black;
+    padding: 5px;
+}
+
+input{
+    color: white;
+    outline: none;
+}
+
+select{
+    color: gray;
+    width: 15%;
+    height: 4vh;
+    border-radius: 5%;
+    background-color: rgba(0, 0, 0, 0.186);
+    margin-top: 2%;
+}
+
+.informacoes{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-left: 10%;
+    color: white;
+    font-size: 18px;
+    width: 40%;
+}
+
+.informacoes h4{
+    margin-top: 5px;
+}
+
+.informacoes a{
+    color: white;
+}
+
+.imageCAD{
+    margin-left: 73%;
+    margin-top: -58%;
+    height: 50vh;
+}
+

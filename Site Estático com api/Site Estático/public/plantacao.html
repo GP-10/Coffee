@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/plantacao.css">
+    <link rel="stylesheet" href="js/funcoes.js">
+    <link rel="icon" type="imagem/png" href="src/img/icon.png" />
+    <title>Cadastro | Plantação</title>
+</head>
+<body>
+<!-- HEADER -->
+
+    <div class="janela">
+        <div class="header-left">
+            <h1>Coffee Healt</h1>
+
+            <img src="./src/img/user.png" class="userimg">
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <img src="./src/img/home.png" class="img">
+                <a href="">
+                    <h3>Perfil</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <img src="./src/img/setor.png" class="img">
+                <a href="./dashboard.html">
+                    <h3>Setores da Plantação</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <img src="./src/img/graf.png" class="img">
+                <a href="./graph.html">
+                    <h3>Gráficos</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <img src="./src/img/logout.png" alt="">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- BANNER -->
+
+    <main>
+        <div class="container">
+            <div class="formulario">
+                <h1>Cadastro Plantação</h1>
+                <div class="form">
+                    <div class="campo">
+                        <h4>Espécie</h4>
+                        <input type="text" id="in_especie" placeholder="Espécie da plantação">
+                    </div>
+                    <div class="campo">
+                        <h4>Estado</h4>
+                        <select name="" id="sel_estado">
+                            <option value="">-- ESTADO--</option>
+                            <option value="1">AC</option>
+                            <option value="2">AL</option>
+                            <option value="3">AP</option>
+                            <option value="4">AM</option>
+                            <option value="5">BA</option>
+                            <option value="6">CE</option>
+                            <option value="7">DF</option>
+                            <option value="8">ES</option>
+                            <option value="9">GO</option>
+                            <option value="10">MA</option>
+                            <option value="11">MT</option>
+                            <option value="12">MS</option>
+                            <option value="13">MG</option>
+                            <option value="14">PA</option>
+                            <option value="15">PB</option>
+                            <option value="16">PR</option>
+                            <option value="17">PE</option>
+                            <option value="18">PI</option>
+                            <option value="19">RJ</option>
+                            <option value="20">RN</option>
+                            <option value="21">RS</option>
+                            <option value="22">RO</option>
+                            <option value="23">RR</option>
+                            <option value="24">SC</option>
+                            <option value="25">SP</option>
+                            <option value="26">SE</option>
+                            <option value="27">TO</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <h4>Cidade</h4>
+                        <input type="text" id="in_cidade" placeholder="Cidade">
+                    </div>
+                    <div class="campo">
+                        <h4>Tamanho (m²)</h4>
+                        <input type="text" id="in_tamanho" placeholder="Tamanho da Plantação">
+                    </div>
+                    
+                    <button class="bnt" onclick="plantar()">Cadastrar</button>
+                </div>
+                <div class="imageCAD">
+                    <img src="./components/images/Gardening-pana.png" width="400px" alt="">
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
+<script>
+    function plantar() {
+        // aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var especieVar = in_especie.value;
+        var estadoVar = sel_estado.value;
+        var cidadeVar = in_cidade.value;
+        var tamanhoVar = in_tamanho.value;
+
+        if (especieVar == "" || estadoVar == "" || cidadeVar == "" || tamanhoVar == "") {
+            alert('Por favor, preencha todos os campos para prosseguir!')
+
+            finalizarAguardar();
+            return false;
+        } else {
+            // setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                especieServer: especieVar,
+                estadoServer: estadoVar,
+                cidadeServer: cidadeVar,
+                tamanhoServer: tamanhoVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // cardErro.style.display = "block";
+
+                alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...")
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+</script>
