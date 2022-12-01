@@ -15,6 +15,7 @@ body {
     display: flex;
     margin-left: 4%;
     max-width: 10vh;
+    margin-top: 4%;
 }
 
 .header-left a {
