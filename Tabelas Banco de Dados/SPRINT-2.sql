@@ -23,7 +23,7 @@ insert into CLIENTE (nome, email, senha) values
 -- CRIANDO TABELA PLANTAÇÃO
 create table PLANTACAO(
 idPlantacao int auto_increment,
-Tipo varchar(45),
+especie varchar(45),
 UF char(2),
 cidade varchar(45),
 Tamanho_m² decimal(4,1),
@@ -32,6 +32,11 @@ foreign key (fkCliente) references CLIENTE (idCliente),
 primary key (idPlantacao,fkCliente)
 )auto_increment=10;
 
+alter table plantacao rename column tipo   to  especie;
+ 
+ desc plantacao;
+
+ 
 -- INSERINDO DADOS 
 insert into PLANTACAO values
 (null,'Arábica','MG','Carmo de Minas',18.7, 100),
