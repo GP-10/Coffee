@@ -98,23 +98,26 @@ function cadastrar(req, res) {
 function plantar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var especie = req.body.especieServer;
-    var estado = req.body.estadoServer;
+    var uf = req.body.ufServer;
     var cidade = req.body.cidadeServer;
     var tamanho = req.body.tamanhoServer;
+    var fkCliente = req.body.fkClienteServer;
 
     // Faça as validações dos valores
     if (especie == undefined) {
         res.status(400).send("Sua espécie está undefined!");
-    } else if (estado == undefined) {
+    } else if (uf == undefined) {
         res.status(400).send("Seu estado está undefined!");
     } else if (cidade == undefined) {
         res.status(400).send("Sua cidade está undefined!");
     } else if (tamanho == undefined) { 
         res.status(400).send("Seu tamanho está undefined!")
+    } else if (fkCliente == undefined) { 
+        res.status(400).send("Seu cliente está undefined!")
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.plantar(especie, estado, cidade, tamanho)
+        usuarioModel.plantar(especie, uf, cidade, tamanho, fkCliente)
             .then(
                 function (resultado) {
                     res.json(resultado);

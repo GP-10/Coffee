@@ -63,8 +63,8 @@
                         <input type="text" id="in_especie" placeholder="Espécie da plantação">
                     </div>
                     <div class="campo">
-                        <h4>Estado</h4>
-                        <select name="" id="sel_estado">
+                        <h4>UF</h4>
+                        <select name="" id="sel_uf">
                             <option value="">-- ESTADO--</option>
                             <option value="1">AC</option>
                             <option value="2">AL</option>
@@ -123,21 +123,21 @@
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var especieVar = in_especie.value;
-        var estadoVar = sel_estado.value;
+        var ufVar = sel_uf.value;
         var cidadeVar = in_cidade.value;
         var tamanhoVar = in_tamanho.value;
 
-        if (especieVar == "" || estadoVar == "" || cidadeVar == "" || tamanhoVar == "") {
+        if (especieVar == "" || ufVar == "" || cidadeVar == "" || tamanhoVar == "") {
             alert('Por favor, preencha todos os campos para prosseguir!')
 
-            finalizarAguardar();
+           // finalizarAguardar();
             return false;
         } else {
             // setInterval(sumirMensagem, 5000)
         }
 
         // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
+        fetch("/usuarios/plantar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -146,31 +146,31 @@
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
                 especieServer: especieVar,
-                estadoServer: estadoVar,
+                ufServer: ufVar,
                 cidadeServer: cidadeVar,
                 tamanhoServer: tamanhoVar
             })
-        }).then(function (resposta) {
+        }).then(function (resposta2) {
 
-            console.log("resposta: ", resposta);
+           // console.log("resposta2: ", resposta2);
 
-            if (resposta.ok) {
+            if (resposta2.ok) {
                 // cardErro.style.display = "block";
 
-                alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...")
+               // alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...")
 
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")
 
                 limparFormulario();
-                finalizarAguardar();
+               //  finalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+        }).catch(function (resposta2) {
+           // console.log(`#ERRO: ${resposta2}`);
+           // finalizarAguardar();
         });
 
         return false;
