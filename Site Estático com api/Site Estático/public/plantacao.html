@@ -63,8 +63,8 @@
                         <input type="text" id="in_especie" placeholder="Espécie da plantação">
                     </div>
                     <div class="campo">
-                        <h4>UF</h4>
-                        <select name="" id="sel_uf">
+                        <h4>estado</h4>
+                        <select name="" id="sel_estado">
                             <option value="">-- ESTADO--</option>
                             <option value="1">AC</option>
                             <option value="2">AL</option>
@@ -123,11 +123,11 @@
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var especieVar = in_especie.value;
-        var ufVar = sel_uf.value;
+        var estadoVar = sel_estado.value;
         var cidadeVar = in_cidade.value;
         var tamanhoVar = in_tamanho.value;
 
-        if (especieVar == "" || ufVar == "" || cidadeVar == "" || tamanhoVar == "") {
+        if (especieVar == "" || estadoVar == "" || cidadeVar == "" || tamanhoVar == "") {
             alert('Por favor, preencha todos os campos para prosseguir!')
 
            // finalizarAguardar();
@@ -146,21 +146,21 @@
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
                 especieServer: especieVar,
-                ufServer: ufVar,
+                estadoServer: estadoVar,
                 cidadeServer: cidadeVar,
                 tamanhoServer: tamanhoVar
             })
-        }).then(function (resposta2) {
+        }).then(function (resposta) {
 
-           // console.log("resposta2: ", resposta2);
+           // console.log("resposta: ", resposta);
 
-            if (resposta2.ok) {
+            if (resposta.ok) {
                 // cardErro.style.display = "block";
 
                // alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...")
 
                 setTimeout(() => {
-                    window.location = "login.html";
+                    window.location = "../dashboards/dashboard.html";
                 }, "2000")
 
                 limparFormulario();
@@ -168,8 +168,8 @@
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function (resposta2) {
-           // console.log(`#ERRO: ${resposta2}`);
+        }).catch(function (resposta) {
+           // console.log(`#ERRO: ${resposta}`);
            // finalizarAguardar();
         });
 
