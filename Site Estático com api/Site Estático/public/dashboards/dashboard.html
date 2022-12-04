@@ -161,7 +161,7 @@
   // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
   // A função *plotarGrafico* também invoca a função *atualizarGrafico*
 
-  var dados0 = []
+  var dados = []
   var dados1 = []
   var dados2 = []
   var dados3 = []
@@ -180,6 +180,7 @@
     var registro = resposta[i];
     document.getElementById(`b_temp${i}`).innerHTML = `${registro.umidade}ºC`
     document.getElementById(`b_umi${i}`).innerHTML = `${registro.temperatura}%`
+    dados.push(registro)
   }
 
     // console.log('----------------------------------------------')
@@ -191,7 +192,7 @@
     // console.log('----------------------------------------------')
 
 
-    // setTimeout(() => atualizarGrafico(idDados), 5000);
+    setTimeout(() => atualizarCards(idDados, resposta), 5000);
   }
 
 
@@ -200,7 +201,7 @@
 
   //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
   //     Para ajustar o "select", ajuste o comando sql em src/models
-  function atualizarCards(idDados) {
+  function atualizarCards(idDados, resposta) {
 
 
 
@@ -223,24 +224,24 @@
               } else {
                   // tirando e colocando valores no gráfico
                   dados.shift(); // apagar o primeiro
-                  dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+                  dados.push(novoRegistro[0].momento_grafico); // incluir um novo momento
 
-                  dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                  dados.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de umidade
+                  // dados[0].temperatura.shift();  // apagar o primeiro de umidade
+                  dados.push(novoRegistro[0].temperatura); // incluir uma nova medida de umidade
 
-                  dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
-                  dados.datasets[1].data.push(novoRegistro[0].umidade); // incluir uma nova medida de temperatura
+                  // dados[1].umidade.shift();  // apagar o primeiro de temperatura
+                  dados.push(novoRegistro[0].umidade); // incluir uma nova medida de temperatura
 
-                  Linha.update();
+              
               }
 
               // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-              proximaAtualizacao = setTimeout(() => atualizarGrafico(idDados, dados, Linha), 5000);
+              proximaAtualizacao = setTimeout(() => atualizarCards(idDados, dados), 5000);
           });
       } else {
           console.error('Nenhum dado encontrado ou erro na API');
           // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-          proximaAtualizacao = setTimeout(() => atualizarGrafico(idDados, dados, Linha), 5000);
+          proximaAtualizacao = setTimeout(() => atualizarCards(idDados, dados), 5000);
       }
   })
       .catch(function (error) {
