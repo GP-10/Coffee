@@ -13,6 +13,7 @@
 </head>
 <body>
 
+  <!-- menu de navegação -->
   <div class="janela">
     <div class="header-left">
       <h1>Grand Coffee</h1>
@@ -58,6 +59,7 @@
     </div>
   </div>
 
+<!-- KPI -->
 <div class="janela">
   <div class="cards">
 
@@ -87,39 +89,40 @@
     </div>
 </div>
 
+<!-- cards de temperatura -->
 <div class="cards-setor">
   <div class="container">
-    <div class="cards1">
+    <div class="cards1 card" id="card" style="background-color: #212124;">
       <h1>Setor 1</h1>
       <div class="temperatura">
-        <p id="temp_setor1">Temp: <span id="b_temp0">20°C</span> <br> Umi: <span id="b_umi0">12%</span></p>
+        <p class="p" id="temp_setor1">Temp: <span id="b_temp0">20°C</span> <br> Umi: <span id="b_umi0">12%</span></p>
         <br>
         <h5>5 minutos atrás</h5>
       </div>
     </div>
     
-    <div class="cards2">
+    <div class="cards2 card" id="card" style="background-color: #212124;">
       <h1>Setor 2</h1>
       <div class="temperatura">
-        <p id="temp_setor2">Temp: <span id="b_temp1">20°C</span> <br> Umi: <span id="b_umi1">12%</span></p>
+        <p class="p" id="temp_setor2">Temp: <span id="b_temp1">20°C</span> <br> Umi: <span id="b_umi1">12%</span></p>
         <br>
         <h5>5 minutos atrás</h5>
       </div>
     </div>
 
-    <div class="cards3">
+    <div class="cards3 card" id="card" style="background-color: #212124;">
       <h1>Setor 3</h1>
       <div class="temperatura">
-        <p id="temp_setor3">Temp: <span id="b_temp2">20°C</span> <br> Umi: <span id="b_umi2">12%</span></p>
+        <p class="p" id="temp_setor3">Temp: <span id="b_temp2">20°C</span> <br> Umi: <span id="b_umi2">12%</span></p>
         <br>
         <h5>5 minutos atrás</h5>
       </div>
     </div>
 
-    <div class="cards4">
+    <div class="cards4 card" id="card" style="background-color: #212124;">
       <h1>Setor 4</h1>
       <div class="temperatura">
-        <p id="temp_setor4">Temp: <span id="b_temp3">20°C</span> <br> Umi: <span id="b_umi3">12%</span></p>
+        <p class="p" id="temp_setor4">Temp: <span id="b_temp3">20°C</span> <br> Umi: <span id="b_umi3">12%</span></p>
         <br>
         <h5>5 minutos atrás</h5>
       </div>
@@ -130,6 +133,7 @@
     
  </html>
 <script>
+
 
   b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
@@ -191,8 +195,51 @@
     // console.log(dados.datasets)
     // console.log('----------------------------------------------')
 
+    // função para os alertas
+    //trocado a cor dos cards para alertar o usuario
+    var card = document.querySelectorAll(".card")
+    var p = document.querySelectorAll(".p")
+
+  for (var i = 0; i < card.length; i++){
+    if(registro.umidade < 3 && registro.temperatura < 5){
+      card[i].style.background = '#3ec8e1';
+      card[i].style.color = 'black';
+      p[i].style.color = 'black';
+    }else if(registro.umidade < 18 && registro.temperatura < 10){
+      card[i].style.background = '#d9e146';
+      card[i].style.color = 'black';
+      p[i].style.color = 'black';
+    }else if(registro.umidade > 22 && registro.temperatura > 13){
+      card[i].style.background = '#e18e46';
+      card[i].style.color = 'black';
+      p[i].style.color = 'black';
+    } else if(registro.umidade > 30 && registro.temperatura > 18){
+      card[i].style.background = '#E13E3E';
+      card[i].style.color = 'black';
+      p[i].style.color = 'black';
+    }
+  }
+
+  if(registro.umidade < 3 && registro.temperatura < 5){
+      console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
+      alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
+    }else if(registro.umidade < 18 && registro.temperatura < 10){
+      console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
+      alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
+    }else if(registro.umidade > 22 && registro.temperatura > 13){
+      console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
+      alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
+    } else if(registro.umidade > 30 && registro.temperatura > 18){
+      console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
+      alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
+    }else{
+      console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
+      alert('PLANTAÇÃO NORMAL')
+    }
+
 
     setTimeout(() => atualizarCards(idDados, resposta), 5000);
+
   }
 
 
@@ -247,6 +294,8 @@
       .catch(function (error) {
           console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
       });
+
+      
 
   }
 
