@@ -201,35 +201,35 @@
     var p = document.querySelectorAll(".p")
 
   for (var i = 0; i < card.length; i++){
-    if(registro.umidade < 3 && registro.temperatura < 5){
+    if(registro.umidade < 3 || registro.temperatura < 5){
       card[i].style.background = '#3ec8e1';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
-    }else if(registro.umidade < 18 && registro.temperatura < 10){
+    }else if(registro.umidade >= 3 && registro.umidade < 18 || registro.temperatura >= 5 && registro.temperatura < 10){
       card[i].style.background = '#d9e146';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
-    }else if(registro.umidade > 22 && registro.temperatura > 13){
+    }else if(registro.umidade >= 22 && registro.umidade <= 30 || registro.temperatura >= 13 && registro.temperatura <= 18){
       card[i].style.background = '#e18e46';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
-    } else if(registro.umidade > 30 && registro.temperatura > 18){
+    }else if(registro.umidade > 30 || registro.temperatura > 18){
       card[i].style.background = '#E13E3E';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
     }
   }
 
-  if(registro.umidade < 3 && registro.temperatura < 5){
+  if(registro.umidade < 3 || registro.temperatura < 5){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
-    }else if(registro.umidade < 18 && registro.temperatura < 10){
+    }else if(registro.umidade >= 3 && registro.umidade < 18 || registro.temperatura >= 5 && registro.temperatura < 10){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
-    }else if(registro.umidade > 22 && registro.temperatura > 13){
+    }else if(registro.umidade > 22 && registro.umidade <= 30 || registro.temperatura > 13 && registro.temperatura <= 18){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
-    } else if(registro.umidade > 30 && registro.temperatura > 18){
+    }else if(registro.umidade > 30 || registro.temperatura > 18){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
     }else{
