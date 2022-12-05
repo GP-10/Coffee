@@ -11,4 +11,8 @@ router.get("/tempo-real/:idDados", function (req, res) {
     medidaController.buscarMedidasEmTempoReal(req, res);
 })
 
+router.get("/tempo-realCards/:idDados", function (req, res) {
+    medidaController.buscarMedidasEmTemporealCards(req, res);
+})
+
 module.exports = router;

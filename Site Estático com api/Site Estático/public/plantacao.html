@@ -63,36 +63,36 @@
                         <input type="text" id="in_especie" placeholder="Espécie da plantação">
                     </div>
                     <div class="campo">
-                        <h4>UF</h4>
-                        <select name="" id="sel_uf">
-                            <option value="">-- ESTADO--</option>
-                            <option value="1">AC</option>
-                            <option value="2">AL</option>
-                            <option value="3">AP</option>
-                            <option value="4">AM</option>
-                            <option value="5">BA</option>
-                            <option value="6">CE</option>
-                            <option value="7">DF</option>
-                            <option value="8">ES</option>
-                            <option value="9">GO</option>
-                            <option value="10">MA</option>
-                            <option value="11">MT</option>
-                            <option value="12">MS</option>
-                            <option value="13">MG</option>
-                            <option value="14">PA</option>
-                            <option value="15">PB</option>
-                            <option value="16">PR</option>
-                            <option value="17">PE</option>
-                            <option value="18">PI</option>
-                            <option value="19">RJ</option>
-                            <option value="20">RN</option>
-                            <option value="21">RS</option>
-                            <option value="22">RO</option>
-                            <option value="23">RR</option>
-                            <option value="24">SC</option>
-                            <option value="25">SP</option>
-                            <option value="26">SE</option>
-                            <option value="27">TO</option>
+                        <h4>estado</h4>
+                        <select name="" id="sel_estado">
+                            <option value="">--ESTADO--</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
                         </select>
                     </div>
                     <div class="campo">
@@ -117,17 +117,20 @@
 
 </html>
 <script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
     function plantar() {
         // aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var especieVar = in_especie.value;
-        var ufVar = sel_uf.value;
+        var estadoVar = sel_estado.value;
         var cidadeVar = in_cidade.value;
         var tamanhoVar = in_tamanho.value;
+        var fkClienteVar = Number(sessionStorage.getItem('ID_CLIENTE'))
 
-        if (especieVar == "" || ufVar == "" || cidadeVar == "" || tamanhoVar == "") {
+        if (especieVar == "" || estadoVar == "" || cidadeVar == "" || tamanhoVar == "") {
             alert('Por favor, preencha todos os campos para prosseguir!')
 
            // finalizarAguardar();
@@ -146,31 +149,32 @@
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
                 especieServer: especieVar,
-                ufServer: ufVar,
+                estadoServer: estadoVar,
                 cidadeServer: cidadeVar,
-                tamanhoServer: tamanhoVar
+                tamanhoServer: tamanhoVar,
+                fkClienteServer: fkClienteVar
             })
-        }).then(function (resposta2) {
+        }).then(function (resposta) {
 
-           // console.log("resposta2: ", resposta2);
+           console.log("resposta: ", resposta);
 
-            if (resposta2.ok) {
+            if (resposta.ok) {
                 // cardErro.style.display = "block";
 
-               // alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...")
+               alert("Cadastro realizado com sucesso!")
 
                 setTimeout(() => {
-                    window.location = "login.html";
+                    window.location = "../dashboards/dashboard.html";
                 }, "2000")
 
                 limparFormulario();
-               //  finalizarAguardar();
+                // finalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function (resposta2) {
-           // console.log(`#ERRO: ${resposta2}`);
-           // finalizarAguardar();
+        }).catch(function (resposta) {
+           console.log(`#ERRO: ${resposta}`);
+        //    finalizarAguardar();
         });
 
         return false;

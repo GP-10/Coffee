@@ -31,13 +31,13 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucao);
 }
 
-function plantar(especie, uf, cidade, tamanho, fkCliente) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function plantar():", especie, uf, cidade, tamanho, fkCliente);
+function plantar(especie, estado, cidade, tamanho, fkCliente) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function plantar():", especie, estado, cidade, tamanho, fkCliente);
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO PLANTACAO (especie, uf, cidade, tamanho, fkCliente) VALUES ('${especie}', '${uf}', '${cidade}', '${tamanho}', '${fkCliente}');
+        INSERT INTO PLANTACAO (tipo, UF, cidade, Tamanho_m2, fkCliente) VALUES ('${especie}', '${estado}', '${cidade}', '${tamanho}', '${fkCliente}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

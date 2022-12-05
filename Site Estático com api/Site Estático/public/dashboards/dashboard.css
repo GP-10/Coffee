@@ -187,6 +187,10 @@ body{
     
 }
 
+.card{
+    transition: .5s ease;
+}
+
 .cards1, .cards2, .cards3{
     margin: 2%;
     width: 40%;
@@ -197,7 +201,6 @@ body{
     text-align: center;
     height: 180px;
     justify-content: right;
-    background-color: #212124;
     font-size: 20px;
 }
 
@@ -219,7 +222,6 @@ body{
     text-align: center;
     height: 180px;
     justify-content: right;
-    background-color: #E13E3E;
     font-size: 20px;
 }
 
