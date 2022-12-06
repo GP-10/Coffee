@@ -120,14 +120,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 22%;
+    margin-left: 19%;
+    width: 85%;
+    /* background-color: tomato; */
 }
 
 .cards div {
-    padding: 10px;
+    padding: 10px 10px;
     height: 40%;
     margin: 20px;
-    width: 150px;
+    width: 150%;
     transition: all 0.3s ease-out;
 }
 
@@ -136,6 +138,10 @@ body{
     cursor: pointer;
 }
    
+.cards h2{
+    text-align: center;
+}
+
 .card p {
     color: #a3a5ae;
     font-size: 16px;
@@ -187,10 +193,6 @@ body{
     
 }
 
-.card{
-    transition: .5s ease;
-}
-
 .cards1, .cards2, .cards3{
     margin: 2%;
     width: 40%;
@@ -201,6 +203,7 @@ body{
     text-align: center;
     height: 180px;
     justify-content: right;
+    background-color: #212124;
     font-size: 20px;
 }
 
@@ -209,7 +212,8 @@ body{
     font-size: 50px;
     font-weight: lighter;
     text-align: left;
-    margin-left: -10%;
+    margin-left: -20%;
+    margin-top: -5%;
 }
 
 .cards4{
@@ -222,6 +226,7 @@ body{
     text-align: center;
     height: 180px;
     justify-content: right;
+    background-color: #E13E3E;
     font-size: 20px;
 }
 
@@ -232,12 +237,14 @@ body{
     text-align: left;
     font-weight: lighter;
     margin: 20px;
+    margin-top: 0%;
+    margin-bottom: 6%;
 }
 .cards-setor h5{
     font-weight: lighter;
     text-align: right;
-    margin-right: 15px;
-    margin-top: -20px;
+    margin-right: -3%;
+    margin-top: -5px;
 }
 
 .temperatura{
