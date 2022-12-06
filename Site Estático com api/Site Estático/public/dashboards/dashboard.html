@@ -271,29 +271,12 @@
               } else {
                   // tirando e colocando valores no gráfico
 
-                  dados[0].temperatura.shift();  // apagar o primeiro de umidade
-                  dados.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
-
-                  dados[1].temperatura.shift(); 
-                  dados.push(novoRegistro[1].umidade);
-
-                  dados[2].temperatura.shift(); 
-                  dados.push(novoRegistro[2].umidade);
-
-                  dados[3].temperatura.shift(); 
-                  dados.push(novoRegistro[3].umidade);
-
-                  dados[0].umidade.shift();  // apagar o primeiro de temperatura
-                  dados.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
-
-                  dados[0].umidade.shift();
-                  dados.push(novoRegistro[0].temperatura);
-
-                  dados[1].umidade.shift();  // apagar o primeiro de temperatura
-                  dados.push(novoRegistro[1].temperatura);
-
-                  dados[3].umidade.shift();  // apagar o primeiro de temperatura
-                  dados.push(novoRegistro[3].temperatura);
+                  for (i = 0; i < 4; i++) {
+                   var registro = novoRegistro[i];
+                   document.getElementById(`b_umi${i}`).innerHTML = `${registro.umidade}%`
+                   document.getElementById(`b_temp${i}`).innerHTML = `${registro.temperatura}ºC`
+                   dados.push(registro)
+                  }
 
               
               }
