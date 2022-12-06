@@ -11,21 +11,6 @@
     <title>Healt Tech</title>
 </head>
 <body>
- 
-  <div class="indicadores">
-    <div class="div_represent">
-      <h2>Grand Coffe Representation</h2>
-    </div>
-
-      <div class="div_nsensores">
-        <div class="sensor">
-          <h2>Sensores Funcionando</h2>
-        </div>
-        <div class="number">
-          <h1>4</h1>
-        </div>
-    </div>
-  </div>
 
   <div class="janela">
     <div class="header-left">
@@ -66,39 +51,47 @@
 
 <div class="graficos">
   <div class="container">   
-    <div class="graf_linha">
-      <div class="cor-linha"><canvas id="Linha"></canvas></div>
+    <div class="graf_linhaTemp">
+      <canvas id="Linha"></canvas>
     </div>
 
-
-    <div class="graf_barra">
-      <canvas id="Barra"></canvas>
+    <div class="graf_linhaUmi">
+      <canvas id="Linha2"></canvas>
     </div>
   </div>
-  
-  <div class="graf_hbarra">
-    <canvas id="hbarra"></canvas>
-  </div>
-    <div class="caixaP">
+
+  <div class="indicadores">
+    <div class="alerta"></div>
+
+    <div class="caixaP1">
 
       <div class="textoGrafico">
-        <h2>Grafico diario  Controle de Umidade</h2>
+        <h2>Temperatura Atual</h2>
+      </div>
+      
+      <div class="porcentagem">
+        <h1>18°C</h1>
+      </div>
+
+    </div>  
+
+    <div class="caixaP2">
+
+      <div class="textoGrafico">
+        <h2>Umidade Atual</h2>
       </div>
       
       <div class="porcentagem">
         <h1>70%</h1>
       </div>
-      
-    </div>
-    
-    
-    
+
+    </div>  
+  </div>  
+
 </div>
 
 </body>
-
-
-<script>
+<!-- <script>
 // const labels1 = [
 //   'Janeiro',
 //   'Fevereiro',
@@ -149,123 +142,19 @@
 // }
 
 // };
-</script>
-<script>
-const labels = [ 
-  'Seg',
-  'Ter',
-  'Qua',
-  'Qui',
-  'Sex',
-  'Sab',
-  'Dom',
-];
-
-
-
-const data = {
-labels: labels,
-datasets: [{
-  label: 'Grafico Semanal - Controle de temperatura',
-  backgroundColor: 'rgba(207, 119, 38, 1)',
-  borderColor: 'rgba(207, 119, 38, 1)',
-  data: [90, 89, 93, 87, 88, 82,89],
-},
-
-]
-};
-
-
-const config = {
-type: 'bar',
-data: data,
-options: {
-  scales: {
-    x: {
-      grid: {
-        display: false,
-      },
-    },
-
-    y: {
-      grid: {
-        // display: false,
-        color: 'rgb(207, 119, 38)',
-      },
-    },
-  },
-}
-
-
-};
-
-
-</script>
-
-<script>
-const labels2 = [ 
-  'Janeiro',
-  'Fevereiro',
-  'Março',
-];
-
-
-
-const data2 = {
-labels: labels2,
-datasets: [{
-  label: 'Grafico Mensal controle de temperatura',
-  backgroundColor: 'rgba(207, 119, 38, 1)',
-  borderColor: 'rgba(207, 119, 38, 1)',
-  data: [90, 89, 93],
-},
-
-]
-};
-
-
-const config2 = {
-type: 'bar',
-data: data2,
-options: {
-  indexAxis: 'y',
-  // Elements options apply to all of the options unless overridden in a dataset
-  // In this case, we are setting the border of each horizontal bar to be 2px wide
-  elements: {
-    bar: {
-      borderWidth: 2,
-    }
-  },
-},
-};
-
-
 </script> -->
 
-<!-- <script>
+<script>
  const Linha = new Chart(
    document.getElementById('Linha'),
    config1
  );
-</script> -->
-
-<script>
-const hbarra = new Chart(
-  document.getElementById('hbarra'),
-  config2
-);
-</script> -->
-
-<script>
-const Barra = new Chart(
-document.getElementById('Barra'),
-config
-);
 </script>
+
+
 <script>
 
-  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
  </script>
 
@@ -307,18 +196,25 @@ config
 
   // Criando estrutura para plotar gráfico - dados
   const labels1 = [];
+  const labels2 = [];
 
 let dados = {
   labels: labels1,
-  datasets: [{
-    label: 'umidade',
-    backgroundColor: 'rgba(207, 119, 38, 1)',
-    borderColor: 'rgba(207, 119, 38, 1)',
-    
-    data: [],
-  },
+  datasets: [
   {
     label: 'temperatura',
+    backgroundColor: 'rgba(207, 119, 38, 1)',
+    borderColor: 'rgba(207, 119, 38, 1)',
+    border: '2px',
+    data: [],
+  }
+]
+};
+let dados2 = {
+  labels: labels2,
+  datasets: [
+  {
+    label: 'Umidade',
     backgroundColor: 'rgba(207, 119, 38, 1)',
     borderColor: 'rgba(207, 119, 38, 1)',
     border: '2px',
@@ -337,13 +233,21 @@ for (i = 0; i < resposta.length; i++) {
   var registro = resposta[i];
   labels1.push(registro.momento_grafico);
   dados.datasets[0].data.push(registro.temperatura);
-  dados.datasets[1].data.push(registro.umidade);
+  // dados.datasets[1].data.push(registro.umidade);
+  }
+
+  for (i = 0; i < resposta.length; i++) {
+  var registro2 = resposta[i];
+  labels2.push(registro2.momento_grafico);
+  // dados.datasets[0].data.push(registro.temperatura);
+  dados2.datasets[0].data.push(registro2.umidade);
   }
   
   console.log('----------------------------------------------')
   console.log('O gráfico será plotado com os respectivos valores:')
   console.log('Labels:')
   console.log(labels1)
+  console.log(labels2)
   console.log('Dados:')
   console.log(dados.datasets)
   console.log('----------------------------------------------')
@@ -354,12 +258,35 @@ for (i = 0; i < resposta.length; i++) {
   data: dados,
   options: {
     scales: {
-      x: {
+      // x: {
+      //   grid: {
+      //     // display: false,
+      //     color: 'rgba(207, 119, 38, 1)',
+      //   },
+      // },
+  
+      y: {
         grid: {
           // display: false,
-          color: 'rgba(207, 119, 38, 1)',
+          color: 'rgba(207, 119, 38, 0.4)',
         },
       },
+    },
+  }
+  
+  };
+
+  const config2 = {
+  type: 'line',
+  data: dados2,
+  options: {
+    scales: {
+      // x: {
+      //   grid: {
+      //     // display: false,
+      //     color: 'rgba(207, 119, 38, 1)',
+      //   },
+      // },
   
       y: {
         grid: {
@@ -379,7 +306,12 @@ for (i = 0; i < resposta.length; i++) {
       config
   );
 
-    setTimeout(() => atualizarGrafico(idDados, dados, Linha), 5000);
+  let Linha2 = new Chart(
+      document.getElementById(`Linha2`),
+      config2
+  );
+
+    setTimeout(() => atualizarGrafico(idDados, dados, dados2, Linha, Linha2), 5000);
   }
 
 
@@ -388,7 +320,7 @@ for (i = 0; i < resposta.length; i++) {
 
   //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
   //     Para ajustar o "select", ajuste o comando sql em src/models
-  function atualizarGrafico(idDados, dados, Linha) {
+  function atualizarGrafico(idDados, dados, dados2, Linha, Linha2) {
 
 
 
@@ -399,8 +331,9 @@ for (i = 0; i < resposta.length; i++) {
               console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
               console.log(`Dados atuais do gráfico:`);
               console.log(dados);
+              console.log(dados2);
 
-              let avisoCaptura = document.getElementById(`avisoCaptura${idDados}`)
+              // let avisoCaptura = document.getElementById(`avisoCaptura${idDados}`)
 
 
               if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
@@ -416,22 +349,23 @@ for (i = 0; i < resposta.length; i++) {
                   dados.labels.shift(); // apagar o primeiro
                   dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
 
-                  dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                  dados.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de umidade
+                  dados2.datasets[0].data.shift();  // apagar o primeiro de umidade
+                  dados2.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de umidade
 
                   dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
                   dados.datasets[1].data.push(novoRegistro[0].umidade); // incluir uma nova medida de temperatura
 
                   Linha.update();
+                  Linha2.update();
               }
 
               // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-              proximaAtualizacao = setTimeout(() => atualizarGrafico(idDados, dados, Linha), 5000);
+              proximaAtualizacao = setTimeout(() => atualizarGrafico(idDados, dados, dados2, Linha, Linha2), 5000);
           });
       } else {
           console.error('Nenhum dado encontrado ou erro na API');
           // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-          proximaAtualizacao = setTimeout(() => atualizarGrafico(idDados, dados, Linha), 5000);
+          proximaAtualizacao = setTimeout(() => atualizarGrafico(idDados, dados, dados2, Linha, Linha2), 5000);
       }
   })
       .catch(function (error) {
