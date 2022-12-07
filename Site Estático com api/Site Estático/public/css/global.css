@@ -67,6 +67,11 @@ a{
     background-color: Transparent;
     background-repeat:no-repeat;
 }
+.nav button:hover{
+    background-color: #cf782657;
+    color: black;
+    border: none;
+}
 .nav button a{
     color: #CF7726;
 }

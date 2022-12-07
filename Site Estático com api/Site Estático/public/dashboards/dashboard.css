@@ -86,6 +86,9 @@ body{
   text-align: center;
   padding: 2% 5%;
 }
+.dash a{
+    margin-left: 15%;
+}
 
 .btn-nav-white {
   text-align: center;

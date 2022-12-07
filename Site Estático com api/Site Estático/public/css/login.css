@@ -22,6 +22,11 @@
     background-repeat:no-repeat;
     margin-left: 23%;
 }
+button:hover{
+    background-color: #CF7726;
+    color: black;
+    border: none;
+}
 
 .campo {
     font-size: 20px;
@@ -68,6 +73,11 @@ input{
 .informacoes h4{
     margin-top: 5px;
 }
-.infoinformacoes a{
-    color: white;
+.infoinformacoes h4 a{
+    color: #CF7726;
+}
+.infoC{
+    margin-top: -3%;
+    color: #CF7726;
+    margin-bottom: 3%;
 }
