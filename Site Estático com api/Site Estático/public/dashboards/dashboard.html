@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Implementando o chartJS</title>
     <link rel="stylesheet" href="dashboard.css">
     <link rel="icon" type="imagem/png" href="../src/img/icon.png" />
     <script src="../js/funcoes.js"></script>
@@ -44,13 +43,6 @@
         </a>
       </div>
 
-      <div class="btn-nav-white">
-        <!-- <img src="../components/images/cadastro.png" class="img"> -->
-        <a href="../plantacao.html">
-            <h3>Cadastro do plantio</h3>
-        </a>
-      </div>
-
       <div class="btn-logout" onclick="limparSessao()">
         <img src="../src/img/logout.png" alt="">
           
@@ -64,32 +56,33 @@
   </div>
 
 <!-- KPI -->
+<div class="KPI" id="KPI">
 <div class="janela">
   <div class="cards">
 
     <div class="card1">
       <h2>ALERTA</h2>
-      <p>Temperatura menor que 3° <br> Umidade menor que 5%</p>
+      <p>Temperatura menor que 3°C <br> Umidade menor que 5%</p>
     </div>
 
     <div class="card2">
       <h2>RISCO</h2>
-      <p>Temperatura menor que 18° <br> Umidade menor que 10%</p>
+      <p>Temperatura menor que 18°C <br> Umidade menor que 10%</p>
     </div>
 
     <div class="card3">
       <h2>IDEAL</h2>
-      <p>Temperatura entre 18°C e 22°C <br> umidade entre 11% e 13%</p>
+      <p>Temperatura entre 18°C e 22°C <br> Umidade entre 11% e 13%</p>
     </div>
 
     <div class="card4">
       <h2>RISCO</h2>
-      <p>Temperatura maior que 22° <br> umidade maior que 13%</p>
+      <p>Temperatura maior que 22°C <br> Umidade maior que 13%</p>
     </div>
 
     <div class="card5">
       <h2>ALERTA</h2>
-      <p>Temperatura maior que 30°C <br> umidade maior que 18%</p>
+      <p>Temperatura maior que 30°C <br> Umidade maior que 18%</p>
     </div>
 </div>
 
@@ -134,7 +127,9 @@
   </div>
   </div>
 </div>
+
     
+</div>
  </html>
 <script>
 
@@ -203,39 +198,44 @@
     //trocado a cor dos cards para alertar o usuario
     var card = document.querySelectorAll(".card")
     var p = document.querySelectorAll(".p")
+    var janela = document.querySelectorAll(".janela2")
+    var shadow = document.getElementById('KPI')
 
   for (var i = 0; i < card.length; i++){
-    if(registro.umidade < 3 && registro.temperatura < 5){
+    if(registro.umidade < 3 || registro.temperatura < 5){
       card[i].style.background = '#3ec8e1';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
-    }else if(registro.umidade < 18 && registro.temperatura < 10){
+    }else if(registro.umidade >= 3 && registro.umidade < 18 ||registro.temperatura >= 5 && registro.temperatura < 10){
       card[i].style.background = '#d9e146';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
-    }else if(registro.umidade > 22 && registro.temperatura > 13){
+    }else if(registro.umidade > 22 && registro.umidade < 30 || registro.temperatura > 13 && registro.temperatura < 18){
       card[i].style.background = '#e18e46';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
-    } else if(registro.umidade > 30 && registro.temperatura > 18){
+    } else if(registro.umidade > 30 || registro.temperatura > 18){
       card[i].style.background = '#E13E3E';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
     }
   }
 
-  if(registro.umidade < 3 && registro.temperatura < 5){
+  if(registro.umidade < 3 || registro.temperatura < 5){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
-    }else if(registro.umidade < 18 && registro.temperatura < 10){
+    }else if(registro.umidade >= 3 && registro.umidade < 18 ||registro.temperatura >= 5 && registro.temperatura < 10){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
-    }else if(registro.umidade > 22 && registro.temperatura > 13){
+    }else if(registro.umidade > 22 && registro.umidade < 30 || registro.temperatura > 13 && registro.temperatura < 18){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
-    } else if(registro.umidade > 30 && registro.temperatura > 18){
+    } else if(registro.umidade > 30 || registro.temperatura > 18){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
+      shadow.style.cssText = `@keyframes mymove{
+    50% {box-shadow :inset 0px 0px 60px #e18e46;}
+}`
     }else{
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('PLANTAÇÃO NORMAL')
@@ -275,29 +275,12 @@
               } else {
                   // tirando e colocando valores no gráfico
 
-                  dados[0].temperatura.shift();  // apagar o primeiro de umidade
-                  dados.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
-
-                  dados[1].temperatura.shift(); 
-                  dados.push(novoRegistro[1].umidade);
-
-                  dados[2].temperatura.shift(); 
-                  dados.push(novoRegistro[2].umidade);
-
-                  dados[3].temperatura.shift(); 
-                  dados.push(novoRegistro[3].umidade);
-
-                  dados[0].umidade.shift();  // apagar o primeiro de temperatura
-                  dados.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
-
-                  dados[0].umidade.shift();
-                  dados.push(novoRegistro[0].temperatura);
-
-                  dados[1].umidade.shift();  // apagar o primeiro de temperatura
-                  dados.push(novoRegistro[1].temperatura);
-
-                  dados[3].umidade.shift();  // apagar o primeiro de temperatura
-                  dados.push(novoRegistro[3].temperatura);
+                  for (i = 0; i < 4; i++) {
+                   var registro = novoRegistro[i];
+                   document.getElementById(`b_umi${i}`).innerHTML = `${registro.umidade}%`
+                   document.getElementById(`b_temp${i}`).innerHTML = `${registro.temperatura}ºC`
+                   dados.push(registro)
+                  }
 
               
               }
