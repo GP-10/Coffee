@@ -38,11 +38,6 @@
                 <h3>Gráficos</h3>
             </a>
           </div>
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> 1d331197d4f48dc576d20da09c5816f7d6955f77
           <div class="btn-logout" onclick="limparSessao()">
             <img src="../src/img/logout.png" alt="">
               
@@ -61,11 +56,7 @@
         Nome: <input type="text" placeholder="Usuario" id="nome">
         <br>
         <br>
-<<<<<<< HEAD
         E-mail: <input type="email" placeholder="usuario@gmail.com" id="email">
-=======
-        E-mail: <input type="email" placeholder="Email@email.com">
->>>>>>> 1d331197d4f48dc576d20da09c5816f7d6955f77
         <br>
         <br>
         Senha: <input type="password" placeholder="*********" id="senha">
@@ -125,16 +116,75 @@
     </div>
 
     <div class="botao2">
-<<<<<<< HEAD
+      <button onclick="salvar_plan()">Salvar</button>
         <button onclick="cancelar()">Cancelar</button>
-        <button onclick="salvar_plan()">Salvar</button>
-=======
-        <button onclick="salvar()">Salvar</button>
-        <button onclick="cancelar()">Cancelar</button>
->>>>>>> 1d331197d4f48dc576d20da09c5816f7d6955f77
     </div>
 </body>
 </html>
 <SCript>
   b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    function salvar() {
+        // aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var idVar = sessionStorage(ID_CLIENTE)
+        var nomeVar = nome.value;
+        var emailVar = email.value;
+        var senhaVar = senha.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "") {
+            alert('Por favor, preencha todos os campos para prosseguir!')
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            // setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/salvar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                idServer: idVar,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // cardErro.style.display = "block";
+
+                alert ("Informmações atualizadas com sucesso!")
+
+                setTimeout(() => {
+                    window.location = "perfil.html";
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar a atualização!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+
 </SCript>
