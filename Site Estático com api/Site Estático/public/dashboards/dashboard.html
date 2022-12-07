@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="./dashboard.css">
     <link rel="icon" type="imagem/png" href="../src/img/icon.png" />
     <script src="../js/funcoes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -51,12 +51,8 @@
     </div>
   </div>
 
-  <div class="help">
-    <button onclick="ajuda()"> <a href="https://portal.pipefy.com/56229f4c-5197-4728-8ef7-a96eb1c5e944">Ajuda ?</a></button>
-  </div>
-
 <!-- KPI -->
-<div class="KPI" id="KPI">
+<div class="KPII" id="KPI">
 <div class="janela">
   <div class="cards">
 
@@ -125,6 +121,10 @@
       </div>
     </div>
   </div>
+  </div>
+
+  <div class="help">
+    <a href="https://portal.pipefy.com/56229f4c-5197-4728-8ef7-a96eb1c5e944" target="_blank">Ajuda?</a>
   </div>
 </div>
 
@@ -224,21 +224,43 @@
   if(registro.umidade < 3 || registro.temperatura < 5){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
+      document.getElementById('KPI').classList.add('frio')
+      document.getElementById('KPI').classList.remove('meiofrio')
+      document.getElementById('KPI').classList.remove('quente')
+      document.getElementById('KPI').classList.remove('meioquente')
+      document.getElementById('KPI').classList.remove('mormal')
     }else if(registro.umidade >= 3 && registro.umidade < 18 ||registro.temperatura >= 5 && registro.temperatura < 10){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
+      document.getElementById('KPI').classList.remove('frio')
+      document.getElementById('KPI').classList.add('meiofrio')
+      document.getElementById('KPI').classList.remove('quente')
+      document.getElementById('KPI').classList.remove('meioquente')
+      document.getElementById('KPI').classList.remove('normal')
     }else if(registro.umidade > 22 && registro.umidade < 30 || registro.temperatura > 13 && registro.temperatura < 18){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
-    } else if(registro.umidade > 30 || registro.temperatura > 18){
+      document.getElementById('KPI').classList.remove('frio')
+      document.getElementById('KPI').classList.remove('meiofrio')
+      document.getElementById('KPI').classList.remove('quente')
+      document.getElementById('KPI').classList.add('meioquente')
+      document.getElementById('KPI').classList.remove('normal')
+    } else if(registro.umidade >= 30 || registro.temperatura >= 18){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
-      shadow.style.cssText = `@keyframes mymove{
-    50% {box-shadow :inset 0px 0px 60px #e18e46;}
-}`
+      document.getElementById('KPI').classList.remove('frio')
+      document.getElementById('KPI').classList.remove('meiofrio')
+      document.getElementById('KPI').classList.add('quente')
+      document.getElementById('KPI').classList.remove('meioquente')
+      document.getElementById('KPI').classList.remove('normal')
     }else{
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('PLANTAÇÃO NORMAL')
+      document.getElementById('KPI').classList.remove('frio')
+      document.getElementById('KPI').classList.remove('meiofrio')
+      document.getElementById('KPI').classList.remove('quente')
+      document.getElementById('KPI').classList.remove('meioquente')
+      document.getElementById('KPI').classList.add('normal')
     }
 
 

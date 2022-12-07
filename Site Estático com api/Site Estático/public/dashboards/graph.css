@@ -221,9 +221,39 @@ body {
     font-size: 45px;
 }
 
-#GRAPH{
+.normal{
     animation: mymove 5s infinite;
 }
 @keyframes mymove{
     50% {box-shadow :inset 0px 0px 60px #2eb62c;}
 }
+
+.frio{
+    animation: frioo 1s infinite;
+}
+@keyframes frioo{
+    50% {box-shadow :inset 0px 0px 60px #3ec8e1}
+}
+
+.quente{
+    animation: quentee 1s infinite;
+}
+@keyframes quentee{
+    50% {box-shadow :inset 0px 0px 60px #E13E3E}
+}
+
+.meioquente{
+    animation: meioquentee 2s infinite;
+}
+@keyframes meioquentee{
+    50% {box-shadow :inset 0px 0px 60px #e18e46}
+}
+
+.meiofrio{
+    animation: meiofrioo 2s infinite;
+}
+@keyframes meiofrioo{
+    50% {box-shadow :inset 0px 0px 60px #d9e146}
+}
+
+

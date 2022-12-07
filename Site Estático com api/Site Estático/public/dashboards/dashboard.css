@@ -9,15 +9,11 @@ body{
     margin: 0 auto;
     
 }
-.KPI{
+.KPII{
+    width: auto;
     height: 120vh;
 }
-#KPI{
-    animation: mymove 5s infinite;
-}
-@keyframes mymove{
-    50% {box-shadow :inset 0px 0px 60px #2eb62c;}
-}
+
 
 .janela2{
     height: 100%;
@@ -269,17 +265,58 @@ body{
 }
 
 .help {
-    margin-left: 90%;
+    width: 20%;
+    right: -155px;
+    bottom: 20px;
+    z-index: 100000000000;
+    position: fixed;
+    margin: 0;
 }
 
 
-.help button{
-    margin-left: 50%;
-    padding: 2%;
-    
-    border-radius: 50%;
+.help a{
+    border-radius: 10px;
     font-size: larger;
     cursor: pointer;
+    color: #212124;
+    text-align: center;
+    text-decoration: none;
+    background-color: #CF7726;
+    padding: 5%;
     
 }
 
+.normal{
+    animation: mymove 5s infinite;
+}
+@keyframes mymove{
+    50% {box-shadow :inset 0px 0px 60px #2eb62c;}
+}
+
+.frio{
+    animation: frioo 1s infinite;
+}
+@keyframes frioo{
+    50% {box-shadow :inset 0px 0px 60px #3ec8e1}
+}
+
+.quente{
+    animation: quentee 1s infinite;
+}
+@keyframes quentee{
+    50% {box-shadow :inset 0px 0px 60px #E13E3E}
+}
+
+.meioquente{
+    animation: meioquentee 2s infinite;
+}
+@keyframes meioquentee{
+    50% {box-shadow :inset 0px 0px 60px #e18e46}
+}
+
+.meiofrio{
+    animation: meiofrioo 2s infinite;
+}
+@keyframes meiofrioo{
+    50% {box-shadow :inset 0px 0px 60px #d9e146}
+}
