@@ -246,4 +246,18 @@ body{
   width: 75%;
 }
 
+.help {
+    margin-left: 90%;
+}
+
+
+.help button{
+    margin-left: 50%;
+    padding: 2%;
+    
+    border-radius: 50%;
+    font-size: larger;
+    cursor: pointer;
+    
+}
 
