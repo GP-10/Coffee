@@ -7,8 +7,20 @@
 body{
     background-color: rgba(0, 0, 0, 0.356);
     margin: 0 auto;
-    padding: 15px;
     
+}
+.KPI{
+    height: 120vh;
+}
+#KPI{
+    animation: mymove 5s infinite;
+}
+@keyframes mymove{
+    50% {box-shadow :inset 0px 0px 60px #2eb62c;}
+}
+
+.janela2{
+    height: 100%;
 }
 
 .janela {

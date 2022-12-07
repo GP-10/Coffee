@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Implementando o chartJS</title>
     <link rel="stylesheet" href="dashboard.css">
     <link rel="icon" type="imagem/png" href="../src/img/icon.png" />
     <script src="../js/funcoes.js"></script>
@@ -53,7 +52,8 @@
   </div>
 
 <!-- KPI -->
-<div class="janela janela2" style="box-shadow: inset 0px 0px 50px #7AF978;">
+<div class="KPI" id="KPI">
+<div class="janela">
   <div class="cards">
 
     <div class="card1">
@@ -123,7 +123,9 @@
   </div>
   </div>
 </div>
+
     
+</div>
  </html>
 <script>
 
@@ -193,43 +195,43 @@
     var card = document.querySelectorAll(".card")
     var p = document.querySelectorAll(".p")
     var janela = document.querySelectorAll(".janela2")
+    var shadow = document.getElementById('KPI')
 
   for (var i = 0; i < card.length; i++){
-    if(registro.umidade < 3 && registro.temperatura < 5){
+    if(registro.umidade < 3 || registro.temperatura < 5){
       card[i].style.background = '#3ec8e1';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
-      janela.style.boxShadow = '#3ec8e1'
-    }else if(registro.umidade < 18 && registro.temperatura < 10){
+    }else if(registro.umidade >= 3 && registro.umidade < 18 ||registro.temperatura >= 5 && registro.temperatura < 10){
       card[i].style.background = '#d9e146';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
-      janela.style.boxShadow = '#d9e146'
-    }else if(registro.umidade > 22 && registro.temperatura > 13){
+    }else if(registro.umidade > 22 && registro.umidade < 30 || registro.temperatura > 13 && registro.temperatura < 18){
       card[i].style.background = '#e18e46';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
-      janela.style.boxShadow = '#e18e46'
-    } else if(registro.umidade > 30 && registro.temperatura > 18){
+    } else if(registro.umidade > 30 || registro.temperatura > 18){
       card[i].style.background = '#E13E3E';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
-      janela.style.boxShadow = '#E13E3E'
     }
   }
 
-  if(registro.umidade < 3 && registro.temperatura < 5){
+  if(registro.umidade < 3 || registro.temperatura < 5){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
-    }else if(registro.umidade < 18 && registro.temperatura < 10){
+    }else if(registro.umidade >= 3 && registro.umidade < 18 ||registro.temperatura >= 5 && registro.temperatura < 10){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
-    }else if(registro.umidade > 22 && registro.temperatura > 13){
+    }else if(registro.umidade > 22 && registro.umidade < 30 || registro.temperatura > 13 && registro.temperatura < 18){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
-    } else if(registro.umidade > 30 && registro.temperatura > 18){
+    } else if(registro.umidade > 30 || registro.temperatura > 18){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
+      shadow.style.cssText = `@keyframes mymove{
+    50% {box-shadow :inset 0px 0px 60px #e18e46;}
+}`
     }else{
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('PLANTAÇÃO NORMAL')
