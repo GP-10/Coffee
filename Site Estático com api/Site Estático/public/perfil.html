@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/perfil.css">
+    <script src="./js/funcoes.js"></script>
     <link rel="icon" type="imagem/png" href="../src/img/icon.png" />
     <title>Healt Tech</title>
 </head>
@@ -46,11 +47,11 @@
         </div>
       </div>
 
-      <div class="imagem">
+      <!-- <div class="imagem">
         <h2>Informações do Usuario</h2>
         <img src="./src/img/user.png" alt="" width="200px">
         <img src=".//src/img/camera (1).png" alt="" class="camera">
-      </div>
+      </div> -->
 
       <div class="dados">
         Nome: <input type="text" placeholder="Usuario" id="nome">
@@ -128,19 +129,17 @@
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
-        var idVar = sessionStorage(ID_CLIENTE)
+        var idVar = sessionStorage.getItem('ID_CLIENTE')
         var nomeVar = nome.value;
         var emailVar = email.value;
         var senhaVar = senha.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "") {
-            alert('Por favor, preencha todos os campos para prosseguir!')
+        if (nomeVar == "" && emailVar == "" && senhaVar == "") {
+            alert('Por favor, preencha algum campo para prosseguir!')
 
-            finalizarAguardar();
             return false;
         }
         else {
-            // setInterval(sumirMensagem, 5000)
         }
 
         // Enviando o valor da nova input
