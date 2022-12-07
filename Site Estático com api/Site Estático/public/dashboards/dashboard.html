@@ -60,7 +60,7 @@
   </div>
 
 <!-- KPI -->
-<div class="janela">
+<div class="janela janela2" style="box-shadow: inset 0px 0px 50px #7AF978;">
   <div class="cards">
 
     <div class="card1">
@@ -199,24 +199,29 @@
     //trocado a cor dos cards para alertar o usuario
     var card = document.querySelectorAll(".card")
     var p = document.querySelectorAll(".p")
+    var janela = document.querySelectorAll(".janela2")
 
   for (var i = 0; i < card.length; i++){
     if(registro.umidade < 3 && registro.temperatura < 5){
       card[i].style.background = '#3ec8e1';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
+      janela.style.boxShadow = '#3ec8e1'
     }else if(registro.umidade < 18 && registro.temperatura < 10){
       card[i].style.background = '#d9e146';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
+      janela.style.boxShadow = '#d9e146'
     }else if(registro.umidade > 22 && registro.temperatura > 13){
       card[i].style.background = '#e18e46';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
+      janela.style.boxShadow = '#e18e46'
     } else if(registro.umidade > 30 && registro.temperatura > 18){
       card[i].style.background = '#E13E3E';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
+      janela.style.boxShadow = '#E13E3E'
     }
   }
 

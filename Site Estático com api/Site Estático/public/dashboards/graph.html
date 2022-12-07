@@ -49,7 +49,8 @@
   </div>
 </div>
 
-<div class="graficos">
+
+<div class="graficos" style="box-shadow: inset 0px 0px 50px #7AF978;">
   <div class="container">   
     <div class="graf_linhaTemp">
       <canvas id="Linha"></canvas>
@@ -88,6 +89,7 @@
     </div>  
   </div>  
 
+</div>
 </div>
 
 </body>
@@ -310,6 +312,33 @@ for (i = 0; i < resposta.length; i++) {
       document.getElementById(`Linha2`),
       config2
   );
+
+
+
+        // função para os alertas
+    //trocado a cor dos cards para alertar o usuario
+    var grafic = document.querySelectorAll(".gaficos")
+
+    if(registro2.umidade < 3 && registro.temperatura < 5){
+      grafic.style.boxShadow = '#3ec8e1'
+      console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
+      alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
+    }else if(registro2.umidade >= 3 && registro2.umidade < 18 ||registro.temperatura >= 5 && registro.temperatura < 10){
+      grafic.style.boxShadow = '#d9e146'
+      console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
+      alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
+    }else if(registro2.umidade > 22 && registro2.umidade < 30 || registro.temperatura > 13 && registro.temperatura < 18){
+      grafic.style.boxShadow = '#e18e46'
+      console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
+      alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
+    } else if(registro2.umidade >= 30 && registro.temperatura >= 18){
+      grafic.style.boxShadow = '#E13E3E'
+      console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
+      alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
+    }else{
+      console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
+      alert('PLANTAÇÃO NORMAL')
+    }
 
     setTimeout(() => atualizarGrafico(idDados, dados, dados2, Linha, Linha2), 5000);
   }
