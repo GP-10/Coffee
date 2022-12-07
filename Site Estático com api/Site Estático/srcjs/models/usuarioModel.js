@@ -36,9 +36,22 @@ function salvar(nome, email, senha,id) {
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
-    var instrucao = `
-        UPDATE cliente(nome, email, senha) SET ('${nome}', '${email}', '${senha}') WHERE ID = ${id};
-    `;
+    var instrucao = ''
+    if(nome != ""){
+     instrucao = `
+         UPDATE cliente SET nome = '${nome}' WHERE idCliente = ${id};
+     `;
+    }
+    if(email != ""){
+        instrucao += `
+         UPDATE cliente SET email = '${email}' WHERE idCliente = ${id};
+     `;
+    }
+    if(senha != ""){
+        instrucao += `
+         UPDATE cliente SET senha = '${senha}' WHERE idCliente = ${id};
+     `;
+    }
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
@@ -60,5 +73,6 @@ module.exports = {
     entrar,
     cadastrar,
     listar,
-    plantar
+    plantar,
+    salvar
 };

@@ -113,7 +113,7 @@ function salvar(req, res) {
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, id)
+        usuarioModel.salvar(nome, email, senha, id)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -178,5 +178,6 @@ module.exports = {
     cadastrar,
     listar,
     testar,
-    plantar
+    plantar,
+    salvar
 }
